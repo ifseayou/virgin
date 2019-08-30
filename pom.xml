@@ -11,7 +11,7 @@
     <modules>
         <module>virgin-avro</module>
         <module>virgin-flink</module>
+        <module>virgin-apollo</module>
     </modules>
-
 
 </project>
