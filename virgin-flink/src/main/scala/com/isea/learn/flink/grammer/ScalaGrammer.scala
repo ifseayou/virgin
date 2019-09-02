@@ -1,5 +1,7 @@
 package com.isea.learn.flink.grammer
 
+import scala.collection.mutable.ArrayBuffer
+
 
 /**
   * @author isea_you
@@ -8,14 +10,16 @@ package com.isea.learn.flink.grammer
   * @target:
   */
 object ScalaGrammer {
-  def main(args: Array[String]): Unit = {
 
+}
+
+
+object Hello{
+  def main(args: Array[String]): Unit = {
+    println("hello scala....")
   }
 }
 
-class PersonS(val name:String,val age :Int){
-  print("PersonS is coming...")
-  // print语句是主构造器的一部分，每当有对象被构造出来的时候，上述的代码就会被执行
-  // 当你需要在构造的过程中配置某个字段的时候，特别有用
+object HelloAPP extends App{
+  println("hello , app")
 }
-

@@ -12,6 +12,8 @@
         <module>virgin-avro</module>
         <module>virgin-flink</module>
         <module>virgin-apollo</module>
+        <module>virgin-kafka</module>
+        <module>virgin-websocket</module>
     </modules>
 
 </project>
