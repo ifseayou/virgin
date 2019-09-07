@@ -14,6 +14,9 @@
         <module>virgin-apollo</module>
         <module>virgin-kafka</module>
         <module>virgin-websocket</module>
+        <module>virgin-spark</module>
+        <module>orgasm-flink</module>
+        <module>organsm-log-collector</module>
     </modules>
 
 </project>
