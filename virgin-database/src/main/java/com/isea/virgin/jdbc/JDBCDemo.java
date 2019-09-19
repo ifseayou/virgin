@@ -1,4 +1,4 @@
-package jdbc;
+package com.isea.virgin.jdbc;
 
 import java.sql.*;
 

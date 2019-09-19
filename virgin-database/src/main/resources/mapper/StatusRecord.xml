@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.isea.clitoris.mybatis.dao.StatusRecordDao">
+    <select id="existTable" parameterType="String" resultType="Integer">
+        select  count(*)
+        from information_schema.TABLES
+        where LCASE(table_name) = #{tableName}
+    </select>
+
+    <update id="dropTable" parameterType="String">
+      DROP TABLE IF EXISTS `${tableName}`
+    </update>
+
+    <update id="createTable" parameterType="String">
+         CREATE TABLE `${tableName}` (
+          id varchar(20) NOT NULL,
+          time_stamp  DATETIME NOT NULL,
+          info json,
+          step int(2) NOT NULL)
+    </update>
+
+    <insert id="insert" parameterType="com.isea.clitoris.mybatis.domain.StatusRecord">
+/*        insert into `${tableName}`
+        (id,time_stamp,info,step)
+        values
+        ("${statusRecord.id}",
+        "${statusRecord.timeStamp}",
+        '${statusRecord.info}',
+        ${statusRecord.step})*/
+
+         insert into `${tableName}`
+        (id,time_stamp,info,step)
+        values
+        (#{statusRecord.id},
+        #{statusRecord.timeStamp},
+        #{statusRecord.info},
+        #{statusRecord.step})
+
+    </insert>
+
+
+</mapper>
