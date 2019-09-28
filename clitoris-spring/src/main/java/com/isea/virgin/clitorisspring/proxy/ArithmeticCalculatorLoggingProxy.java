@@ -1,4 +1,4 @@
-package com.isea.virgin.clitorisspring.aop.service;
+package com.isea.virgin.clitorisspring.proxy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

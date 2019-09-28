@@ -1,5 +1,7 @@
-package com.isea.virgin.virginloggerannotation;
+package com.isea.virgin.virginloggerannotation.controller;
 
+import com.isea.virgin.virginloggerannotation.annotation.Log;
+import com.isea.virgin.virginloggerannotation.domain.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +21,6 @@ public class DemoController {
     private final Logger logger= LoggerFactory.getLogger(DemoController.class);
 
     @GetMapping("/list")
-    @Log("学生列表")
     public @ResponseBody
     List<Student> list(){
         ArrayList<Student> list=new ArrayList<>();

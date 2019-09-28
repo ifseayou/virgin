@@ -1,6 +1,6 @@
-package com.isea.virgin.virginloggerannotation;
+package com.isea.virgin.virginloggerannotation.aspect;
 
-import com.google.gson.Gson;
+import com.isea.virgin.virginloggerannotation.annotation.Log;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -9,29 +9,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 
 /**
  * @author isea_you
  * @date 2019/9/25
  * @time 14:34
- * @target:
- * 参考：https://www.cnblogs.com/sword-successful/p/10850168.html
+ * @target: 参考：https://www.cnblogs.com/sword-successful/p/10850168.html 的代码实现boot + 注解 + AOP
+ * 改造之后是基于
  */
 @Aspect  // 作用是把当前类标识为一个切面供容器读取
 @Order(5)  // @Order注解主要用来控制配置类的加载顺序
 @Component
 public class LogAspect {
 
-    private final Logger logger= LoggerFactory.getLogger(LogAspect.class);
-    ThreadLocal<Long> startTime =  new ThreadLocal();
+    private final Logger logger = LoggerFactory.getLogger(LogAspect.class);
+    ThreadLocal<Long> startTime = new ThreadLocal();
 
 
-    @Pointcut("@annotation(com.isea.virgin.virginloggerannotation.Log)")
+    @Pointcut("@annotation(com.isea.virgin.virginloggerannotation.annotation.Log)")
     public void log() {
     }
 

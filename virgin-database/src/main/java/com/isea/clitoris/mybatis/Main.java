@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 
@@ -39,6 +40,14 @@ public class Main {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsReader, properties);
         SqlSession sqlSession = sqlSessionFactory.openSession();
 //        UserDao userDao = sqlSession.getMapper(UserDao.class);
+//        ArrayList<User> userArrayList = new ArrayList<>();
+//        userArrayList.add(new User(1,"z3","z3"));
+//        userArrayList.add(new User(2,"l4","l4"));
+//        userArrayList.add(new User(3,"w5","w5"));
+//
+//        userDao.insertByList(userArrayList);
+//        sqlSession.commit();
+
 //
 //        // 查询操作
 //        User user = userDao.selectUserById(1);
@@ -67,16 +76,26 @@ public class Main {
 
         try {
             StatusRecordDao statusRecordDao = sqlSession.getMapper(StatusRecordDao.class);
-            isExist = statusRecordDao.existTable(tableName);
-            if ( 0 == isExist )
-                statusRecordDao.createTable(tableName);
+//            isExist = statusRecordDao.existTable(tableName);
+//            if ( 0 == isExist )
+//                statusRecordDao.createTable(tableName);
             SimpleDateFormat d = new SimpleDateFormat("YYYY-MM-dd:H:m:s");
 
             String time = d.format(new Date());
             System.out.println(time);
-            Integer isOne = statusRecordDao.insert(tableName,
-                    new StatusRecord(key, time, value, 1));
-            if (1 != isOne){
+//            Integer isOne = statusRecordDao.insert(tableName,
+//                    new StatusRecord(key, time, value, 1));
+
+            ArrayList<StatusRecord> statusRecords = new ArrayList<>();
+            statusRecords.add(new StatusRecord("1", d.format(new Date()),"1",1));
+            statusRecords.add(new StatusRecord("2", d.format(new Date()),"2",2));
+            statusRecords.add(new StatusRecord("3", d.format(new Date()),"3",3));
+            statusRecords.add(new StatusRecord("4", d.format(new Date()),"4",4));
+
+            Integer isOne = statusRecordDao.insertByList(tableName, statusRecords);
+            System.out.println(isOne);
+
+            if (0 == isOne){
 //                logger.error("插入" + tableName + "失败");
                 System.out.println("插入" + tableName + "失败");
             }

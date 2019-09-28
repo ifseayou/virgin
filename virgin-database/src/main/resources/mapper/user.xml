@@ -4,21 +4,23 @@
     <select id="selectUserById" parameterType="int" resultType="com.isea.clitoris.mybatis.domain.User">
         SELECT * FROM user WHERE id = #{id}
     </select>   
-    <!--<select id="findAllList" resultType="com.isea.clitoris.mybatis.domain.User">-->
-        <!--SELECT * FROM user    -->
-    <!--</select>   -->
-  <!--<insert id="insertByList" parameterType="java.util.List" >-->
-    <!--insert into user -->
-          <!--(name,  -->
-           <!--password-->
-           <!--)-->
-    <!--values -->
-    <!--<foreach collection="list" index="index" item="item" separator=",">-->
-    	 <!--(#{item.name,jdbcType=VARCHAR}, -->
-    	  <!--#{item.password,jdbcType=VARCHAR}-->
-         <!--)-->
-    <!--</foreach>-->
-  <!--</insert>-->
+<!--    <select id="findAllList" resultType="com.isea.clitoris.mybatis.domain.User">
+        SELECT * FROM user
+    </select>  -->
+  <insert id="insertByList" parameterType="java.util.List" >
+    insert into user
+          (id,
+            name,
+           password
+           )
+    values
+    <foreach collection="list" index="index" item="item" separator=",">
+    	 (#{item.id,jdbcType=INTEGER},
+          #{item.name,jdbcType=VARCHAR},
+    	  #{item.password,jdbcType=VARCHAR}
+         )
+    </foreach>
+  </insert>
 
     <insert id="insert2User" parameterType="com.isea.clitoris.mybatis.domain.User">
         insert into user (
@@ -27,4 +29,5 @@
           password
         ) values (#{id},#{name},#{password})
     </insert>
+
 </mapper>  

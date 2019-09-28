@@ -1,4 +1,4 @@
-package com.isea.virgin.clitorisspring.aop.service;
+package com.isea.virgin.clitorisspring.proxy;
 
 /**
  * @author isea_you

@@ -4,6 +4,8 @@ package com.isea.clitoris.mybatis.dao;
 import com.isea.clitoris.mybatis.domain.StatusRecord;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * @author isea_you
  * @date 2019/9/18
@@ -18,4 +20,7 @@ public interface StatusRecordDao {
     Integer createTable(@Param("tableName") String tableName);
 
     Integer insert(@Param("tableName") String tableName, @Param("statusRecord") StatusRecord statusRecord);
+
+    Integer insertByList(@Param("tableName") String tableName,@Param("list") List list);
+
 }

@@ -7,4 +7,28 @@ package com.isea.clitoris.fundation;
  * @target:
  */
 public class EnumCase {
+    public static void main(String[] args) {
+        Season sea = Season.AUTUMN;
+        switch (sea){
+            case AUTUMN:
+                System.out.println("秋天");
+                break;
+            case SPRING:
+                System.out.println("春天");
+                break;
+            case SUMMER:
+                System.out.println("夏天");
+                break;
+            case WINTER:
+                System.out.println("冬天" );
+                break;
+        }
+    }
+}
+
+enum Season{
+    SPRING,
+    SUMMER,
+    AUTUMN,
+    WINTER
 }

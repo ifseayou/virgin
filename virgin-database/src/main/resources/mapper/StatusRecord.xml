@@ -39,4 +39,18 @@
     </insert>
 
 
+    <insert id="insertByList" parameterType="java.util.List" >
+        insert into ${tableName}
+        (id,time_stamp,info,step)
+        values
+        <foreach collection="list" index="index" item="item" separator=",">
+            (#{item.id},
+            #{item.timeStamp},
+            #{item.info},
+            #{item.step}
+            )
+        </foreach>
+    </insert>
+
+
 </mapper>

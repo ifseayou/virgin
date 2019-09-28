@@ -8,7 +8,7 @@ import java.util.UUID;
  * @time 17:18
  * @target:
  */
-public class GetUUID {
+public class GetUUIDCase {
     public static void main(String[] args) {
         System.out.println(UUID.randomUUID().toString());  //
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");

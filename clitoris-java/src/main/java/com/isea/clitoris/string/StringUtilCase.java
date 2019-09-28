@@ -7,4 +7,5 @@ package com.isea.clitoris.string;
  * @target:
  */
 public class StringUtilCase {
+
 }

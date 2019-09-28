@@ -14,16 +14,18 @@ import java.util.Date;
 public class RedisVirgin {
     public static void main(String[] args) {
         Jedis jd = new Jedis("192.168.1.30",6379);
-
-        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd" );
-        Date d= new Date();
-        String totalSize = sdf.format(d);
+        // 测试redis是否连接成功
         System.out.println(jd.ping());
-        jd.set(totalSize,"50");
-        System.out.println(jd.get(totalSize));
-        System.out.println("-------------");
 
-        System.out.println(jd.set(totalSize, String.valueOf(Integer.valueOf(jd.get(totalSize)) + 20)));
-        System.out.println(jd);
+        // 尝试设置一个值，String类型
+        System.out.println(jd.set("one", "1")); // 如果设置成功，返回OK
+
+        // 获取刚刚设置的值
+        System.out.println(jd.get("one"));
+
+        // list类型设置值
+        System.out.println(jd.lpush("two", "2", "2.1", "2.2"));
+        System.out.println(jd.lpop("two"));  // lpop类似于出栈操作，一旦出栈，此数据就不在了
+        System.out.println(jd.lrange("two",0,-1));
     }
 }

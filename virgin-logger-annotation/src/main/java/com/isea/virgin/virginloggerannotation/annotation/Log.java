@@ -1,4 +1,4 @@
-package com.isea.virgin.virginloggerannotation;
+package com.isea.virgin.virginloggerannotation.annotation;
 
 import java.lang.annotation.*;
 

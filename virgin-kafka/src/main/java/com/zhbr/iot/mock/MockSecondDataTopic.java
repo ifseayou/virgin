@@ -33,13 +33,13 @@ public class MockSecondDataTopic {
         producer = new KafkaProducer<String, String>(props);
     }
 
-    public void produce() {
+    public void produce() throws InterruptedException {
         int i = 1;
         List list = new ArrayList();
         list.add("11010800018600030000");
-//        list.add("11010800018600040000");
-//        list.add("11010800018600050000");
-//        list.add("11010800000400010000");
+        list.add("11010800018600040000");
+        list.add("11010800018600050000");
+        list.add("11010800000400010000");
         List list1 = new ArrayList();
         list1.add("7A07");
         list1.add("0014");
@@ -58,6 +58,7 @@ public class MockSecondDataTopic {
                 Map map = new HashMap();
                 String key = list.get(j).toString();
                 long time = System.currentTimeMillis();
+                TimeUnit.MICROSECONDS.sleep(5);
                 String timeStamp = Long.toString(time);
                 List value = new ArrayList();
                 List list2 = new ArrayList();
@@ -70,14 +71,18 @@ public class MockSecondDataTopic {
                 map.put("TIMESTAMP", timeStamp);
                 String msg = JSON.toJSONString(map);
                 System.out.println(msg);
+                System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
                 producer.send(new ProducerRecord<String, String>(TOPIC, key, msg));
+//                producer.send(new ProducerRecord<String, String>(TOPIC,  msg));
+
             }
 //            i++;
 //            if (i == 100) {
 //                break;
 //            }
             try {
-                TimeUnit.MILLISECONDS.sleep(1000);
+                TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -85,7 +90,7 @@ public class MockSecondDataTopic {
 //        producer.close();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new MockSecondDataTopic().produce();
     }
 

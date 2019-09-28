@@ -1,4 +1,4 @@
-package com.isea.virgin.virginloggerannotation;
+package com.isea.virgin.virginloggerannotation.domain;
 
 /**
  * @author isea_you
