@@ -17,8 +17,9 @@ import java.lang.reflect.Method;
  * @date 2019/9/25
  * @time 14:34
  * @target: 参考：https://www.cnblogs.com/sword-successful/p/10850168.html 的代码实现boot + 注解 + AOP
- * 改造之后是基于
- */
+ * 改造之后是基于*/
+
+
 @Aspect  // 作用是把当前类标识为一个切面供容器读取
 @Order(5)  // @Order注解主要用来控制配置类的加载顺序
 @Component

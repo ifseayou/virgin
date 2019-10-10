@@ -1,6 +1,6 @@
 package com.isea.clitoris.order;
 
-import static com.isea.dw.checker.OrderChecker.*;
+import static com.isea.clitoris.checker.OrderChecker.*;
 
 // 归并排序实现
 public class MergeSort {

@@ -1,5 +1,6 @@
 package com.isea.learn.flink.grammer
 
+
 /**
   * @author isea_you
   * @date 2019/8/28
@@ -11,4 +12,5 @@ package object Grammer {
   def main(args: Array[String]): Unit = {
     abs(-3)
   }
+
 }

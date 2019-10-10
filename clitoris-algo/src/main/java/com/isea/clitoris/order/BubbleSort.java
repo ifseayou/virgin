@@ -1,6 +1,6 @@
 package com.isea.clitoris.order;
 
-import static com.isea.dw.checker.OrderChecker.*;
+import static com.isea.clitoris.checker.OrderChecker.*;
 
 // 冒泡排序的实现
 public class BubbleSort {

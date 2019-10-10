@@ -2,7 +2,7 @@ package com.isea.clitoris.order;
 
 import java.util.Random;
 
-import static com.isea.dw.checker.OrderChecker.*;
+import static com.isea.clitoris.checker.OrderChecker.*;
 
 // 随机快排的实现
 public class QuickSort {

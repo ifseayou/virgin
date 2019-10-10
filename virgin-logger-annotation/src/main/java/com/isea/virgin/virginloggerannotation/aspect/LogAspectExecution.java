@@ -12,8 +12,9 @@ import org.springframework.stereotype.Component;
  * @author isea_you
  * @date 2019/9/25
  * @time 14:34
- * @target:
- */
+ * @target:*/
+
+
 @Aspect  // 作用是把当前类标识为一个切面供容器读取
 @Order(5)  // @Order注解主要用来控制配置类的加载顺序
 @Component

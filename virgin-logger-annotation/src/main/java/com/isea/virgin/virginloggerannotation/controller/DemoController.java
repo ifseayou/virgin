@@ -4,6 +4,7 @@ import com.isea.virgin.virginloggerannotation.annotation.Log;
 import com.isea.virgin.virginloggerannotation.domain.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -15,14 +16,15 @@ import java.util.List;
  * @time 15:42
  * @target:
  */
-@RestController
+@Controller
 @RequestMapping(value = "/v1/demo")
 public class DemoController {
     private final Logger logger= LoggerFactory.getLogger(DemoController.class);
 
     @GetMapping("/list")
-    public @ResponseBody
-    List<Student> list(){
+    @ResponseBody
+    @Log
+    public List<Student> list(){
         ArrayList<Student> list=new ArrayList<>();
         Student student0=new Student(1,"kobe",30);
         Student student1=new Student(2,"james",30);

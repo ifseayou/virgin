@@ -1,6 +1,6 @@
 package com.isea.clitoris.order;
 
-import static com.isea.dw.checker.OrderChecker.*;
+import static com.isea.clitoris.checker.OrderChecker.*;
 
 /**
  *  插入排序实现 1,23,4,8,9
