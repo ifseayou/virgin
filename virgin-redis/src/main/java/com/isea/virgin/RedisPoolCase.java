@@ -1,30 +1,73 @@
 package com.isea.virgin;
 
-import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author isea_you
- * @date 2019/9/25
- * @time 13:55
+ * @date 2019/10/13
+ * @time 14:33
  * @target:
  */
 public class RedisPoolCase {
     public static void main(String[] args) {
+        getSnapShot("310115000035000100000012");
+    }
 
+    public static void getSnapShot(String point){
+        List<String> result ;
+        String host="192.168.1.212";
+        int port=6379;
+        String password="sys";
+        int database=5;
+        int maxTotal=200;
+        int maxIdle=100;
+        int maxWaitMillis=15000;
         JedisPoolConfig config = new JedisPoolConfig();
-        config.setMaxTotal(1024); // 资源池中最大连接数
-        config.setMaxIdle(10); // 资源池允许最大空闲的连接数
-        config.setMaxWaitMillis(1000); // 当资源池连接用尽后，调用者的最大等待时间(单位为毫秒)
-        config.setTestOnBorrow(true); // 向资源池借用连接时是否做连接有效性检测(ping)，无效连接会被移除
-        config.setTestOnReturn(true); //  向资源池归还连接时是否做连接有效性检测(ping)，无效连接会被移除
+        config.setMaxIdle(maxIdle);
+        config.setMaxWaitMillis(maxWaitMillis);
+        config.setMaxTotal(maxTotal);
+        config.setTestOnBorrow(false);
+        config.setTestOnReturn(true);
+        JedisPool jp = new JedisPool(config,host,port);
+        Jedis jedis = null;
+        try {
+            jedis = jp.getResource();
+            jedis.auth(password);
+            jedis.select(database);
 
-        //
-        JedisPool jedisPool = new JedisPool(config,"192.168.1.30", 6379);
-        Jedis jedis = jedisPool.getResource();
-        jedis.set("three","3");
-        System.out.println(jedis.get("three"));
+            ArrayList<String> list = new ArrayList<>();
+            list.add("110108000186000300007A07");
+            list.add("110108000186000400007A07");
+            list.add("110108000186000500007A07");
+            list.add("110108000004000100007A07");
+
+            result = jedis.hmget("overrideConfig",String.valueOf(list));
+            System.out.println(jedis.hget("overrideConfig", "110108000004000100007A07"));
+            for (String s : result) {
+                System.out.println("result: "+s);
+            }
+
+            List<String> overrideConfig = jedis.hmget("overrideConfig", "110108000004000100007A07", "110108000186000400007A07");
+            for (String s : overrideConfig) {
+                System.out.println("s" + s);
+            }
+
+            jedis.close();
+            jp.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(jedis!=null&&jedis.isConnected()){
+                jedis.close();
+            }
+            if(jp!=null&&!jp.isClosed()){
+                jp.close();
+            }
+        }
     }
 }

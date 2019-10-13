@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">    
+<mapper namespace="com.isea.clitoris.mybatis.dao.CodeRatioDao">
+   <select id="select" resultType="com.isea.clitoris.mybatis.domain.CodeRatio">
+       select code,ratio,status from tb_point_clear_override;
+   </select>
+
+</mapper>  

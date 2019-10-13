@@ -27,6 +27,7 @@
         <mapper resource = "mapper/EmployeeMapper.xml"/>
         <mapper resource = "mapper/User.xml"/>
         <mapper resource = "mapper/StatusRecord.xml"/>
+        <mapper resource = "mapper/CodeRatio.xml"/>
 
     </mappers>
 

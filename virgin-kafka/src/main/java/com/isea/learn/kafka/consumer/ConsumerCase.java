@@ -42,6 +42,7 @@ public class ConsumerCase {
                 for (ConsumerRecord<String, String> record : records) {
                     // 打印数据
                     System.out.println(record.value());
+                    System.out.println(record);
                 }
             }
 
