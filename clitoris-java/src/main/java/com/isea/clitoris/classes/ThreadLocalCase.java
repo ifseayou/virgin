@@ -11,18 +11,17 @@ import org.slf4j.LoggerFactory;
  */
 public class ThreadLocalCase {
     private final static Logger logger = LoggerFactory.getLogger(ThreadLocalCase.class);
+    static ThreadLocal<String> local = new ThreadLocal<>();
 
     public static void main(String[] args) {
-        ThreadLocal<String> local = new ThreadLocal<>();
         local.set("good");
-        new Thread(()->
+        new Thread(() ->
             logger.info(local.get())
         ).start();
         logger.info(local.get());
     }
-
-    /**
-     * 56 [main] INFO com.isea.clitoris.classes.ThreadLocalCase - good
-     * 56 [Thread-0] INFO com.isea.clitoris.classes.ThreadLocalCase - null
-     */
 }
+/**
+ * 65 [main] INFO com.isea.clitoris.classes.ThreadLocalCase - good
+ * 65 [Thread-0] INFO com.isea.clitoris.classes.ThreadLocalCase - null
+ */

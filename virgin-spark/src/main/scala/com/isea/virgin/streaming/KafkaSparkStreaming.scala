@@ -1,3 +1,4 @@
+/*
 package com.isea.virgin.streaming
 
 
@@ -60,3 +61,4 @@ object KafkaSparkStreaming {
   }
 
 }
+*/

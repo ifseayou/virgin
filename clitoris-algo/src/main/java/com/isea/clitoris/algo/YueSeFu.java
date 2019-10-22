@@ -25,7 +25,7 @@ public class YueSeFu {
             p = p.next;
         }
 
-        p.next = head;
+        p.next = head;  // 尾节点指向头结点
         return p;
     }
 
