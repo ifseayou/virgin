@@ -42,8 +42,8 @@ public class CirclePrintMatrix {
                 System.out.print(metric[i][b]);
             }
         } else {
-            int curC = b;
             int curR = a;
+            int curC = b;
             while (curC != d) {
                 System.out.print(metric[a][curC] + " ");
                 curC++;

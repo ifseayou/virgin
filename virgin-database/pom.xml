@@ -37,6 +37,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.joinbright</groupId>
+            <artifactId>golden-datasource</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

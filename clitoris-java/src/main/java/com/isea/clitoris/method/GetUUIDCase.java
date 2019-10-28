@@ -10,7 +10,7 @@ import java.util.UUID;
  */
 public class GetUUIDCase {
     public static void main(String[] args) {
-        System.out.println(UUID.randomUUID().toString());  //
+        System.out.println(UUID.randomUUID().toString());  //  36位的
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         System.out.println(uuid);
     }

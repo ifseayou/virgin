@@ -15,8 +15,8 @@ public class GetFormatDateCase {
         SimpleDateFormat dfs1 = new SimpleDateFormat("YYYY_MM_dd");
         System.out.println(dfs1.format(new Date())); // 2019_09_19
 
-        SimpleDateFormat dfs2 = new SimpleDateFormat("yyyy-MM-dd:HH:m:s ");
-        System.out.println(dfs2.format(new Date())); // 2019-09-19:17:47:54
+        SimpleDateFormat dfs2 = new SimpleDateFormat("yyyy-MM-dd HH:m:s ");
+        System.out.println(dfs2.format(new Date()));
 
 
         SimpleDateFormat dfs3 = new SimpleDateFormat("yyyy-MM-dd:HH:m:s:SSS");
