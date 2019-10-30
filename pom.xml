@@ -26,6 +26,7 @@
         <module>virgin-database</module>
         <module>clitoris-java</module>
         <module>clitoris-logger</module>
+        <module>virgin-juint</module>
     </modules>
 
     <properties>
