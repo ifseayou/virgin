@@ -1,7 +1,7 @@
 package com.isea.penis.to30;
 
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.LinkedList;
 
 /**
  * @author isea_you
@@ -10,26 +10,37 @@ import java.util.Stack;
  * @target: 从上往下打印出二叉树的每个节点，同层节点从左至右打印。即为二叉树的层序遍历
  */
 public class Num22 {
-    private static class TreeNode{
+    private static class TreeNode {
         private int value;
         private TreeNode left;
         private TreeNode right;
-        public TreeNode(){}
-        public TreeNode(int value){
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int value) {
             this.value = value;
             this.left = null;
             this.right = null;
         }
     }
+
     public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();
-        if (root == null){
+        if (root == null) {
             return res;
         }
-        Stack<TreeNode> help = new Stack<>();
-        help.push(root);
-        while(!help.isEmpty()){
-
+        LinkedList<TreeNode> help = new LinkedList<>();
+        help.addLast(root);
+        while (!help.isEmpty()) {
+            TreeNode cur = help.pop();
+            res.add(cur.value);
+            if (cur.left != null) {
+                help.addLast(cur.left);
+            }
+            if (cur.right != null) {
+                help.addLast(cur.right);
+            }
         }
         return res;
     }
@@ -49,7 +60,5 @@ public class Num22 {
             System.out.print(re + " ");
         }
         System.out.println();
-
-
     }
 }
