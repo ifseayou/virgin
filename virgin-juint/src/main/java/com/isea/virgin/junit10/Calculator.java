@@ -1,4 +1,4 @@
-package com.isea.vigin.junit10;
+package com.isea.virgin.junit10;
 
 /**
  * @author isea_you

@@ -1,4 +1,4 @@
-package com.isea.vigin.junit10;
+package com.isea.virgin.junit10;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,7 +7,6 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 
 /**
  * @author isea_you
