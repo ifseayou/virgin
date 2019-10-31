@@ -1,5 +1,7 @@
 package com.isea.penis.to30;
 
+import java.util.HashMap;
+
 /**
  * @author isea_you
  * @date 2019/10/30
@@ -12,20 +14,40 @@ public class Num25 {
         private int value;
         private RandomListNode next;
         private RandomListNode random;
-        public RandomListNode(){}
         public RandomListNode(int value){
             this.value = value;
-            next = null;
-            random = null;
         }
     }
 
     public RandomListNode Clone(RandomListNode pHead){
-
+        HashMap<RandomListNode, RandomListNode> help = new HashMap<>();
+        RandomListNode cur = pHead;
+        while(cur != null){
+            help.put(cur,new RandomListNode(cur.value));
+            cur = cur.next;
+        }
+        cur = pHead;
+        while(cur != null){
+            help.get(cur).next = help.get(cur.next);
+            help.get(cur).random = help.get(cur.random);
+            cur = cur.next;
+        }
+        return help.get(pHead);
     }
     public static void main(String[] args) {
         Num25 nu25 = new Num25();
-
-
+        RandomListNode head = new RandomListNode(1);
+        head.next = new RandomListNode(2);
+        head.next.next = new RandomListNode(3);
+        head.random = head.next.next;
+        head.next.random = head.next;
+        head.next.next.random = head;
+        RandomListNode clone = nu25.Clone(head);
+        RandomListNode cur = clone;
+        while(cur != null){
+            System.out.print(cur.random.value + " ");
+            cur = cur.next;
+        }
+        System.out.println();
     }
 }

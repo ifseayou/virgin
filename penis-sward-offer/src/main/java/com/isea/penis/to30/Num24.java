@@ -15,11 +15,8 @@ public class Num24 {
         private int value;
         private TreeNode left;
         private TreeNode right;
-        private TreeNode(){}
         private TreeNode(int value){
             this.value = value;
-            this.left = null;
-            this.right = null;
         }
     }
     ArrayList<ArrayList<Integer>> res = new ArrayList<>();

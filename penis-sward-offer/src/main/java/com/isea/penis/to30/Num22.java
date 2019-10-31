@@ -15,13 +15,8 @@ public class Num22 {
         private TreeNode left;
         private TreeNode right;
 
-        public TreeNode() {
-        }
-
         public TreeNode(int value) {
             this.value = value;
-            this.left = null;
-            this.right = null;
         }
     }
 
