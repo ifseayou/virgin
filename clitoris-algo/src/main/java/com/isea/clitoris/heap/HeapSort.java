@@ -5,9 +5,9 @@ package com.isea.clitoris.heap;
  * heapInsert，也即将一个元素加入到堆中，使得结构仍然是堆的结构,这是一个上浮的过程
  * heapify，也即如果一个元素发生了变化，这个元素进行下沉的过程
  */
-public class HeapSort {
+class HeapSort {
     public static void heapSort(int[] arr) {
-        if (arr == null || arr.length < 2) {
+        if (arr ==  null || arr.length < 2) {
             return;
         }
         for (int i = 0; i < arr.length; i++) {
@@ -21,10 +21,11 @@ public class HeapSort {
         }
     }
 
+    // 在arr中，认为[0,heapSize-1]位置形成了堆结构
     private static void heapify(int[] arr, int index, int heapSize) {
         int left = index * 2 + 1;
         while (left < heapSize) {
-            int largestIndex = left + 1 > heapSize && arr[left] < arr[left + 1] ?
+            int largestIndex = left + 1 < heapSize && arr[left] < arr[left + 1] ?
                     left + 1 :
                     left;
             largestIndex = arr[index] > arr[largestIndex] ? index : largestIndex;
@@ -32,13 +33,13 @@ public class HeapSort {
                 break;
             }
             swap(arr, index, largestIndex);
+            index = largestIndex; // 当前下标变为较大的孩子的下标，left变化继续循环。
             left = index * 2 + 1;
         }
-
     }
 
     private static void heapInsert(int[] arr, int index) {
-        while (arr[index] > arr[(index - 1) / 2]) {
+        while (arr[index] > arr[(index - 1) / 2]) { // 当前的节点小于父，或者是等于父，都不会继续进行下去了
             swap(arr, index, (index - 1) / 2);
             index = (index - 1) / 2;
         }
@@ -48,6 +49,5 @@ public class HeapSort {
         arr[i] = arr[i] ^ arr[j];
         arr[j] = arr[i] ^ arr[j];
         arr[i] = arr[i] ^ arr[j];
-
     }
 }
