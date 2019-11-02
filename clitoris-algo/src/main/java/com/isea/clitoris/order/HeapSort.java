@@ -41,10 +41,10 @@ class HeapSort {
         }
     }
 
-    private void heapInsert(int[] arr, int i) {
-        while(arr[i] > arr[(i - 1) / 2]){
-            swap(arr,i,(i - 1) / 2);
-            i = (i - 1) / 2;
+    private void heapInsert(int[] arr, int index) {
+        while(arr[index] > arr[(index - 1) / 2]){
+            swap(arr,index,(index - 1) / 2);
+            index = (index - 1) / 2;
         }
     }
 
