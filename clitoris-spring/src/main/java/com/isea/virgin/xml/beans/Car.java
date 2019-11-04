@@ -1,4 +1,4 @@
-package com.isea.virgin.clitoris.beans;
+package com.isea.virgin.xml.beans;
 
 /**
  * @author isea_you
@@ -6,7 +6,7 @@ package com.isea.virgin.clitoris.beans;
  * @time 7:52
  * @target:
  */
-class Car {
+public class Car {
 
     private String brand;
     private String address;

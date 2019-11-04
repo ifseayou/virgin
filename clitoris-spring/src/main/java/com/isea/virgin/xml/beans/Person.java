@@ -1,4 +1,4 @@
-package com.isea.virgin.clitoris.beans;
+package com.isea.virgin.xml.beans;
 
 /**
  * @author isea_you
@@ -6,7 +6,7 @@ package com.isea.virgin.clitoris.beans;
  * @time 7:52
  * @target:
  */
-class Person {
+public class Person {
     // Navigate to spring bean declarations
     private String name;
     private int age;

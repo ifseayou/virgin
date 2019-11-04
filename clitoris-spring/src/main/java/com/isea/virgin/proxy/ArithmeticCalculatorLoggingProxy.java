@@ -1,5 +1,6 @@
-package com.isea.virgin.clitoris.proxy;
+package com.isea.virgin.proxy;
 
+import com.isea.virgin.service.ArithmeticCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,11 +12,10 @@ import java.lang.reflect.Proxy;
  * @author isea_you
  * @date 2019/9/28
  * @time 7:34
- * @target:
+ * @target: 基于接口实现动态代理
  */
 public class ArithmeticCalculatorLoggingProxy {
     private final Logger logger = LoggerFactory.getLogger(ArithmeticCalculatorLoggingProxy.class);
-
 
     // 要代理的对象
     private ArithmeticCalculator target;
@@ -24,7 +24,7 @@ public class ArithmeticCalculatorLoggingProxy {
         this.target = target;
     }
 
-    public ArithmeticCalculator getLogginProxy() {
+    public ArithmeticCalculator getLoggingProxy() {
         ArithmeticCalculator proxy = null;
         // 代理对象由哪一个类加载器加载
         ClassLoader loader = target.getClass().getClassLoader();
