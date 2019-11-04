@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="car1" class="com.isea.virgin.Car">
+    <bean id="car1" class="com.isea.virgin.clitoris.beans.Car">
         <constructor-arg value="Audi" type="java.lang.String"></constructor-arg>
         <constructor-arg  type="java.lang.String">
             <value><![CDATA[<Gummy>]]></value>
@@ -13,11 +13,11 @@
         </constructor-arg>
     </bean>
 <!---->
-    <bean id="person1" class="com.isea.virgin.Person">
+    <bean id="person1" class="com.isea.virgin.clitoris.beans.Person">
         <property name="name" value="Tom"></property>
         <property name="age" value="22"></property>
         <property name="car">
-            <bean class="com.isea.virgin.Car">
+            <bean class="com.isea.virgin.clitoris.beans.Car">
                 <constructor-arg value="Ford"></constructor-arg>
                 <constructor-arg value="ChangAn"></constructor-arg>
                 <constructor-arg value="3000"></constructor-arg>

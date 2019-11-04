@@ -1,11 +1,18 @@
-package com.isea.virgin;
+package com.isea.virgin.clitoris.beans;
 
-public class Person {
+/**
+ * @author isea_you
+ * @date 2019/11/4
+ * @time 7:52
+ * @target:
+ */
+class Person {
+    // Navigate to spring bean declarations
     private String name;
     private int age;
     private Car car;
 
-    public Person() {
+    public Person() { // Navigate to spring bean
     }
 
     public String getName() {
@@ -22,7 +29,7 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
-    }
+    } // Navigate to spring bean property
 
     public void setAge(int age) {
         this.age = age;
@@ -40,4 +47,5 @@ public class Person {
                 ", car=" + car +
                 '}';
     }
+
 }

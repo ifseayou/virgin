@@ -1,4 +1,4 @@
-package com.isea.virgin.clitorisspring;
+package com.isea.virgin.clitoris;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

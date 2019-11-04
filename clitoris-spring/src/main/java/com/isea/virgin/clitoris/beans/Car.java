@@ -1,6 +1,13 @@
-package com.isea.virgin;
+package com.isea.virgin.clitoris.beans;
 
-public class Car {
+/**
+ * @author isea_you
+ * @date 2019/11/4
+ * @time 7:52
+ * @target:
+ */
+class Car {
+
     private String brand;
     private String address;
     private double price;
