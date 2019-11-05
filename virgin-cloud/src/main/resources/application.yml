@@ -1,7 +1,0 @@
-eureka:
-  client:
-    enabled: false
-
-home:
-  ribbon:
-    listOfServers: http://localhost:8081
