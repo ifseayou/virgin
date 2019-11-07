@@ -6,17 +6,18 @@ package com.zhbr.iot.mock;
  * @time 18:42
  * @target:
  */
-import org.apache.kafka.clients.producer.KafkaProducer;
+
 import com.alibaba.fastjson.JSON;
+import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.*;
-import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
 //seconddata-topic
 @SuppressWarnings("ALL")
-public class Seconddata {
+public class
+Seconddata {
     private static KafkaProducer<String, String> producer;
     private final static String TOPIC = "seconddata-topic";
 
@@ -37,12 +38,18 @@ public class Seconddata {
     public void produce() {
         int i = 1;
         List list = new ArrayList();
-        list.add("11010800018300010000");
+/*        list.add("11010800018300010000");
         list.add("11010800018300020000");
         list.add("11010800018300030000");
-        list.add("11010800000400010000");
+        list.add("11010800000400010000");*/
+
+
+        list.add("31011200000600020000");
+        list.add("31011200000600050000");
+        list.add("31011200000600060000");
+        list.add("31011200000600070000");
         List list1 = new ArrayList();
-        list1.add("7A07");
+ /*       list1.add("7A07");
         list1.add("0014");
         list1.add("0012");
         list1.add("0001");
@@ -58,7 +65,10 @@ public class Seconddata {
         list1.add("0015");
         list1.add("000C");
         list1.add("000D");
-        list1.add("000E");
+        list1.add("000E");*/
+
+        list1.add("0012");
+        list1.add("0013");
 
 //        {"VALUES":["0012=1.020","0013=-0.720","0008=0.873","0007=50.050","0004=6.180","0005=7.860","0006=10.380","1121=388.200","1122=388.100","1123=388.500"],
 //        "KEY":"15052500000600600000",

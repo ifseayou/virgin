@@ -30,11 +30,6 @@ public class GetFormatDateCase {
         Date date1 = dfs3.parse(result);
         long ts = date1.getTime();
         System.out.println(ts);
-
-
-
-
-
     }
 
 }

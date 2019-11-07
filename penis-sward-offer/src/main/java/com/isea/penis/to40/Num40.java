@@ -36,6 +36,6 @@ public class Num40 {
         int[] num1 = new int[1];
         int[] num2 = new int[1];
         num40.FindNumsAppearOnce(arr,num1,num2);
-        System.out.println(num1[0] + "-- " + num2[0]);
+        System.out.println(num1[0] + " -- " + num2[0]);
     }
 }
