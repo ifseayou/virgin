@@ -13,13 +13,36 @@ import java.util.ArrayList;
  * 输出所有和为S的连续正数序列。序列内按照从小至大的顺序，序列间按照开始数字从小到大的顺序
  */
 public class Num41 {
-
     public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
-        return new ArrayList<>();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        // 使用双指针来mock一个滑动窗口
+        int left = 1;
+        int right = 2;
+        while(left < right){
+            // 窗口的值,使用等差数列的求和公式
+            int window = (left + right) * (right - left + 1) / 2;
+            if (window == sum){
+                ArrayList<Integer> help = new ArrayList<>();
+                for (int i = left ;i <= right ;i ++){
+                    help.add(i);
+                }
+                res.add(help);
+                left ++;
+            }else if (window < sum){
+                right ++;
+            }else {
+                left ++;
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {
         Num41 num41 = new Num41();
-        num41.FindContinuousSequence(5);
+        ArrayList<ArrayList<Integer>> res = num41.FindContinuousSequence(100);
+        res.forEach(t ->{
+            t.forEach(x-> System.out.print(x + " "));
+            System.out.println();
+        });
     }
 }
