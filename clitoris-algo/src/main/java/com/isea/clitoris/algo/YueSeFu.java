@@ -19,7 +19,7 @@ public class YueSeFu {
             throw new IllegalArgumentException("N 必须大于0");
         }
         Node head = new Node(1);
-        Node p = head; // 尾节点指向头结点
+        Node p = head;
         for (int i = 2;i <= n ; i ++){
             p.next = new Node(i);
             p = p.next;
@@ -51,7 +51,8 @@ public class YueSeFu {
     }
 
     public static void main(String[] args) {
-        printCircleQueue(generateList(8));
-        System.out.println(getLuckyBoy(8, 3));
+        printCircleQueue(generateList(7));
+        System.out.println(getLuckyBoy(7, 3));
+        System.out.println(getLuckyBoy(7, 11));
     }
 }

@@ -7,4 +7,7 @@ package com.isea.penis.to60;
  * @target:
  */
 public class Num53 {
+
+    public static void main(String[] args) {
+    }
 }

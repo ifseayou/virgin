@@ -28,7 +28,7 @@ public class SuccessorNode {
             return getMostLeft(head.right);
         } else {
             TreeNode parent = head.parent;
-            while( parent != null && parent.left == head){ // parent != null 主要最后一个元素，其后继为null。
+            while( parent != null && parent.left != head){ // parent != null 主要最后一个元素，其后继为null。
                 head = parent;
                 parent = head.parent;
             }

@@ -49,9 +49,9 @@ public class Num62 {
         if ("#".equals(value)){
             return null;
         }
-        TreeNode head = new TreeNode(Integer.valueOf(value));
-        head.left = deSerialBinaryTree(queue);
-        head.right = deSerialBinaryTree(queue);
+        TreeNode head = new TreeNode(Integer.valueOf(value)); // 反序列化当前节点
+        head.left = deSerialBinaryTree(queue); // 反序列化当前节点的左子树
+        head.right = deSerialBinaryTree(queue); // 发序列化当前节点的右子树
         return head;
     }
 

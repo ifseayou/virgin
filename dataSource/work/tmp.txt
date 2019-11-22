@@ -69,6 +69,17 @@
 todo : 11.09
 http://localhost:8881/common/views/corpIndex/corpIndex_modal.html?qyid=3CBBA5B0-5545-4A46-B50D-310E7E1410B2
 
+0 1 2 3 4 5 6 7 8 9
+
+31011200000600020000,31011200000600010000
+
+3101120000060002
+0000
+
+
+
+
+
 
 
 

@@ -9,13 +9,13 @@ package com.isea.penis.to60;
  */
 public class Num57 {
 
-    public static class ListNode{
-        private int val;
-        private ListNode next;
-        public ListNode(int val){
-            this.val = val;
+        public static class ListNode{
+            private int val;
+            private ListNode next;
+            public ListNode(int val){
+                this.val = val;
+            }
         }
-    }
 
     public ListNode deleteDuplication(ListNode pHead){
         ListNode head = new ListNode(0);
