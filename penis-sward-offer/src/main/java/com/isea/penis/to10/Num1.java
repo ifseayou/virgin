@@ -22,12 +22,4 @@ public class Num1 {
         }
         return false;
     }
-
-    public static void main(String[] args) {
-        int[][] arr = {{1,2,3},{4,5,6},{7,8,9}};
-        Num1 num1 = new Num1();
-        System.out.println(num1.find(0, arr));
-        System.out.println(num1.find(3,arr));
-    }
-
 }

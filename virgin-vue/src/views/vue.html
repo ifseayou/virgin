@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-$END$
+<div id="app">
+    <p>{{ message }}</p>
+    <button v-on :click = "reverseMessage">反转消息</button>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message : 'Hello vue.js'
+       },
+        methods : {
+            reverseMessage : function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    });
+</script>
 </body>
 </html>

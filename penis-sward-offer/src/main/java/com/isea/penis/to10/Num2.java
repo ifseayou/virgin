@@ -21,12 +21,4 @@ public class Num2 {
         }
         return res.toString();
     }
-
-
-    public static void main(String[] args) {
-        String target = "We Are Happy";
-        StringBuffer sb = new StringBuffer(target);
-        Num2 num2 = new Num2();
-        System.out.println(num2.replaceSpace(sb));
-    }
 }

@@ -30,7 +30,7 @@ public class Num4 {
     }
 
     private TreeNode reConstructBinaryTree(int[] pre,int preL,int preR,int[] in,int inL,int inR){
-        if (preL > preR || inL > inL){
+        if (preL > preR || inL > inR){
             return null;
         }
 
@@ -50,5 +50,4 @@ public class Num4 {
         int[] in = new int[]{4,7,2,1,5,3,8,6};
         System.out.println(num4.reConstructBinaryTree(pre, in));
     }
-
 }

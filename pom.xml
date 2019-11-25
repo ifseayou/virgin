@@ -28,6 +28,7 @@
         <module>clitoris-logger</module>
         <module>virgin-juint</module>
         <module>virgin-boot-web</module>
+        <module>virgin-vue</module>
     </modules>
 
     <properties>

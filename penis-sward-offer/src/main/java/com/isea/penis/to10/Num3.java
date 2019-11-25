@@ -10,7 +10,7 @@ import java.util.Stack;
  * @target: 输入一个链表，按链表从尾到头的顺序返回一个ArrayList。
  */
 public class Num3 {
-    private static class ListNode{
+    public static class ListNode{
         private int value;
         private ListNode next;
         public ListNode(){}

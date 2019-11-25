@@ -29,11 +29,6 @@ public class Num5 {
         }
     }
     public static void main(String[] args) {
-        Num5 num5 = new Num5();
-        num5.push(4);
-        num5.push(5);
-        num5.push(6);
-        System.out.println(num5.pop());
-        System.out.println(num5.pop());
+
     }
 }
