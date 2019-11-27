@@ -12,7 +12,6 @@ import java.util.HashMap;
 public class Num8 {
     HashMap<Integer, Integer> cache = new HashMap<>();
     public int JumpFloor(int target) {
-
         if (target == 1){
             return 1;
         }else if (target == 2){
@@ -25,13 +24,4 @@ public class Num8 {
         cache.put(target,res);
         return res;
     }
-
-    public static void main(String[] args) {
-        Num8 num8 = new Num8();
-        System.out.println(num8.JumpFloor(2));
-        System.out.println(num8.JumpFloor(3));
-        System.out.println(num8.JumpFloor(4));
-
-    }
-
 }

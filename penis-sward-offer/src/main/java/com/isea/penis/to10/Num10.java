@@ -19,10 +19,4 @@ public class Num10 {
             return RectCover(target - 1) + RectCover(target - 2);
         }
     }
-    public static void main(String[] args) {
-        Num10 num10 = new Num10();
-        System.out.println(num10.RectCover(1));
-        System.out.println(num10.RectCover(2));
-        System.out.println(num10.RectCover(3));
-    }
 }

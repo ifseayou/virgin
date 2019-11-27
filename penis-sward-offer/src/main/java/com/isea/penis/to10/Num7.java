@@ -15,13 +15,4 @@ public class Num7 {
             return Fibonacci(n - 1) + Fibonacci(n- 2);
         }
     }
-    public static void main(String[] args) {
-        Num7 num7 = new Num7();
-        System.out.println(num7.Fibonacci(1));
-        System.out.println(num7.Fibonacci(2));
-        System.out.println(num7.Fibonacci(3));
-        System.out.println(num7.Fibonacci(4));
-        System.out.println(num7.Fibonacci(9));
-
-    }
 }

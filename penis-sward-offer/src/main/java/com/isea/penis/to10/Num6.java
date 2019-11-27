@@ -22,10 +22,4 @@ public class Num6 {
         }
         return res;
     }
-    public static void main(String[] args) {
-        int[] arr = new int[]{3,4,5,1,2};
-        Num6 num6 = new Num6();
-        System.out.println(num6.minNumberInRotateArray(arr));
-    }
-
 }

@@ -3,25 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<div id="app">
-    <p>{{ message }}</p>
-    <button v-on :click = "reverseMessage">反转消息</button>
+<div>
+    <button @click="destoryVue">destory vue</button>
+    <p v-show="isShowing">{{msg}}</p>
 </div>
-<script>
-    new Vue({
-        el: '#app',
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el: 'div',
         data: {
-            message : 'Hello vue.js'
-       },
-        methods : {
-            reverseMessage : function () {
-                this.message = this.message.split('').reverse().join('')
+            msg: '尚硅谷IT教育',
+            isShowing: true,
+            persons: []
+        },
+        beforeCreate () {
+            console.log('beforeCreate() msg=' + this.msg)
+        },
+        created () {
+            console.log('created() msg='+this.msg)
+
+            this.intervalId = setInterval(() => {
+                console.log('-----')
+            this.isShowing = !this.isShowing
+        }, 1000)
+        },
+
+        beforeMount () {
+            console.log('beforeMount() msg='+this.msg)
+        },
+        mounted () {
+            console.log('mounted() msg='+this.msg)
+        },
+
+        beforeUpdate() {
+            console.log('beforeUpdate isShowing='+this.isShowing)
+        },
+        updated () {
+            console.log('updated isShowing='+this.isShowing)
+        },
+
+        beforeDestroy () {
+            console.log('beforeDestroy() msg='+this.msg)
+            clearInterval(this.intervalId)
+        },
+
+        destroyed () {
+            console.log('destroyed() msg='+this.msg)
+        },
+
+        methods: {
+            destoryVue () {
+                vue.$destroy()
             }
         }
-    });
+    })
 </script>
+
 </body>
 </html>

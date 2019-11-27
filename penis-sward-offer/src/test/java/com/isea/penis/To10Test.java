@@ -1,8 +1,6 @@
 package com.isea.penis;
 
-import com.isea.penis.to10.Num1;
-import com.isea.penis.to10.Num2;
-import com.isea.penis.to10.Num5;
+import com.isea.penis.to10.*;
 import org.junit.Test;
 
 /**
@@ -40,5 +38,46 @@ public class To10Test {
         num5.push(6);
         System.out.println(num5.pop());
         System.out.println(num5.pop());
+    }
+
+    @Test
+    public void  testNum6(){
+        int[] arr = new int[]{3,4,5,1,2};
+        Num6 num6 = new Num6();
+        System.out.println(num6.minNumberInRotateArray(arr));
+    }
+
+    @Test
+    public void testNum7(){
+        Num7 num7 = new Num7();
+        System.out.println(num7.Fibonacci(1));
+        System.out.println(num7.Fibonacci(2));
+        System.out.println(num7.Fibonacci(3));
+        System.out.println(num7.Fibonacci(4));
+        System.out.println(num7.Fibonacci(9));
+    }
+
+    @Test
+    public void testNum8(){
+        Num8 num8 = new Num8();
+        System.out.println(num8.JumpFloor(2));
+        System.out.println(num8.JumpFloor(3));
+        System.out.println(num8.JumpFloor(4));
+    }
+
+    @Test
+    public void testNum9(){
+        Num9 num9 = new Num9();
+        System.out.println(num9.JumpFloorII(1));
+        System.out.println(num9.JumpFloorII(3));
+        System.out.println(num9.JumpFloorII(4));
+    }
+
+    @Test
+    public void testNum10(){
+        Num10 num10 = new Num10();
+        System.out.println(num10.RectCover(1));
+        System.out.println(num10.RectCover(2));
+        System.out.println(num10.RectCover(3));
     }
 }

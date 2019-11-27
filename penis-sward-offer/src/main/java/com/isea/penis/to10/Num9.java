@@ -16,11 +16,4 @@ public class Num9 {
             return 2 * JumpFloorII(target - 1);
         }
     }
-
-    public static void main(String[] args) {
-        Num9 num9 = new Num9();
-        System.out.println(num9.JumpFloorII(1));
-        System.out.println(num9.JumpFloorII(3));
-        System.out.println(num9.JumpFloorII(4));
-    }
 }
