@@ -23,11 +23,4 @@ public class Num12 {
             return res;
         }
     }
-    public static void main(String[] args) {
-        Num12 num12 = new Num12();
-        System.out.println(num12.Power(2.0, 4));
-        System.out.println(num12.Power(1.0, 0));
-        System.out.println(num12.Power(0.0, 1));
-        System.out.println(num12.Power(2.0, -2));
-    }
 }

@@ -25,16 +25,4 @@ public class Num13 {
             array[i] = arr1.get(i);
         }
     }
-    public static void main(String[] args) {
-        int[] array = {4,5,3,2,1,6};
-        for (int i : array) {
-            System.out.print(i + "\t");
-        }
-        Num13 num13 = new Num13();
-        num13.reOrderArray(array);
-        System.out.println();
-        for (int i : array) {
-            System.out.print(i + "\t");
-        }
-    }
 }
