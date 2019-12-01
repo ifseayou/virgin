@@ -1,9 +1,9 @@
 package com.isea.penis;
 
-import com.isea.penis.to20.Num11;
-import com.isea.penis.to20.Num12;
-import com.isea.penis.to20.Num13;
+import com.isea.penis.to20.*;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 /**
  * @author isea_you
@@ -21,7 +21,8 @@ public class To20Test {
         System.out.println(num11.NumberOf1(4));
     }
 
-    @Test void testNum12(){
+    @Test
+    public void testNum12(){
         Num12 num12 = new Num12();
         System.out.println(num12.Power(2.0, 4));
         System.out.println(num12.Power(1.0, 0));
@@ -41,5 +42,27 @@ public class To20Test {
         for (int i : array) {
             System.out.print(i + "\t");
         }
+    }
+
+    @Test
+    public void testNum19(){
+        Num19 num19 = new Num19();
+        int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        ArrayList<Integer> res = num19.printMatrix(matrix);
+        for (Integer re : res) {
+            System.out.print(re + " ");
+        }
+        System.out.println();
+    }
+    @Test
+    public void testNum20(){
+        Num20 num20 = new Num20();
+        num20.push(3);
+        num20.push(2);
+        num20.push(3);
+        num20.push(1);
+        System.out.println(num20.min());
+        num20.pop();
+        System.out.println(num20.min());
     }
 }

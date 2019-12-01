@@ -20,44 +20,33 @@ public class Num19 {
         while (a <= c && c <= d) {
             circlePrintMatrix(matrix, res, a++, b++, c--, d--);
         }
-
         return res;
     }
 
     private void circlePrintMatrix(int[][] matrix, ArrayList<Integer> res, int a, int b, int c, int d) {
-        if (a == c) {
+        if (a == c) { // 同一行
             for (int i = b; i <= d; i++) {
                 res.add(matrix[a][i]);
             }
-        } else if (b == d) {
+        } else if (b == d) { // 同一列
             for (int i = a; i <= c; i++) {
                 res.add(matrix[i][b]);
             }
-        } else {
+        } else { // 不同行，不同列
             int curR = a;
             int curC = b;
-            while (curC != d) {
+            while (curC != d) { // 上行
                 res.add(matrix[a][curC++]);
             }
-            while (curR != c) {
+            while (curR != c) { // 右列
                 res.add(matrix[curR++][d]);
             }
-            while(curC != b){
+            while(curC != b){ // 下行
                 res.add(matrix[c][curC --]);
             }
-            while(curR != a){
+            while(curR != a){ // 左列
                 res.add(matrix[curR --][b]);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Num19 num19 = new Num19();
-        int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-        ArrayList<Integer> res = num19.printMatrix(matrix);
-        for (Integer re : res) {
-            System.out.print(re + " ");
-        }
-        System.out.println();
     }
 }

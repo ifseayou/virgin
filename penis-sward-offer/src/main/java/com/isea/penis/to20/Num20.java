@@ -42,14 +42,4 @@ public class Num20 {
         return stack2.peek();
     }
 
-    public static void main(String[] args) {
-        Num20 num20 = new Num20();
-        num20.push(3);
-        num20.push(2);
-        num20.push(3);
-        num20.push(1);
-        System.out.println(num20.min());
-        num20.pop();
-        System.out.println(num20.min());
-    }
 }
