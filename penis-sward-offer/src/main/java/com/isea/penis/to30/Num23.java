@@ -6,6 +6,7 @@ package com.isea.penis.to30;
  * @time 8:08
  * @arget: 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。
  * 如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+ * !!! 后续遍历：左右根，其中右最大，范围内根节点大于所有左边节点，小于右边节点
  */
 public class Num23 {
     public boolean VerifySequenceOfBST(int[] sequence) {
@@ -26,7 +27,7 @@ public class Num23 {
         // 从start开始，判断左子树是否都是小于根的
         int i = start;
         while (i < end) {
-            if (sequence[i] > sequence[end]) {
+            if (sequence[i] > sequence[end]) {// 指针滑到
                 break;
             }
             i++;
@@ -38,15 +39,5 @@ public class Num23 {
         }
 
         return isBST(sequence,start,i - 1) && isBST(sequence,i,end - 1);
-    }
-
-    public static void main(String[] args) {
-        Num23 num23 = new Num23();
-        int[] sequence1 = {1, 3, 2, 5, 7, 6, 4};
-        int[] sequence2 = {1, 100, 2, 5, 7, 6, 4};
-
-        System.out.println(num23.VerifySequenceOfBST(sequence1));
-        System.out.println(num23.VerifySequenceOfBST(sequence2));
-
     }
 }

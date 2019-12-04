@@ -8,6 +8,9 @@ import java.util.HashMap;
  * @time 17:49
  * @target: 输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），
  * 返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
+ * ！！！使用一个HashMap来实现，
+ * 1，第一次遍历链表，复制所有的节点
+ * 2，第二次遍历链表，组织所有节点之间的关系
  */
 public class Num25 {
     private static class RandomListNode {
@@ -22,12 +25,12 @@ public class Num25 {
     public RandomListNode Clone(RandomListNode pHead){
         HashMap<RandomListNode, RandomListNode> help = new HashMap<>();
         RandomListNode cur = pHead;
-        while(cur != null){
+        while(cur != null){ // 拷贝该链表
             help.put(cur,new RandomListNode(cur.value));
             cur = cur.next;
         }
         cur = pHead;
-        while(cur != null){
+        while(cur != null){ // 组织链表节点之间的关系
             help.get(cur).next = help.get(cur.next);
             help.get(cur).random = help.get(cur.random);
             cur = cur.next;

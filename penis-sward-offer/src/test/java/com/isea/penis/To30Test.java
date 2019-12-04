@@ -1,6 +1,7 @@
 package com.isea.penis;
 
 import com.isea.penis.to30.Num21;
+import com.isea.penis.to30.Num23;
 import org.junit.Test;
 
 /**
@@ -21,7 +22,13 @@ public class To30Test {
     }
 
     @Test
-    public void testNum22(){
+    public void testNum23(){
+        Num23 num23 = new Num23();
+        int[] sequence1 = {1, 3, 2, 5, 7, 6, 4};
+        int[] sequence2 = {1, 100, 2, 5, 7, 6, 4};
 
+        System.out.println(num23.VerifySequenceOfBST(sequence1));
+        System.out.println(num23.VerifySequenceOfBST(sequence2));
     }
+
 }
