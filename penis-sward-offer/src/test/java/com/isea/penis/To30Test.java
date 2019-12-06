@@ -1,8 +1,9 @@
 package com.isea.penis;
 
-import com.isea.penis.to30.Num21;
-import com.isea.penis.to30.Num23;
+import com.isea.penis.to30.*;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 /**
  * @author isea_you
@@ -31,4 +32,31 @@ public class To30Test {
         System.out.println(num23.VerifySequenceOfBST(sequence2));
     }
 
+    @Test
+    public void testNum27(){
+        String abc = "abc";
+        Num27 num27 = new Num27();
+        ArrayList<String> res = num27.Permutation(abc);
+        res.forEach(t-> System.out.print(t + "\t"));
+    }
+
+    @Test
+    public void  testNum28(){
+        Num28 num28 = new Num28();
+        int[] arr1 = {99,2,99,4,6,99,99};
+        int[] arr2 = {1,3,1,4,6,1,1};
+        int[] arr3 = {1,3,5,4,6,1,1};
+        System.out.println(num28.MoreThanHalfNum_Solution(arr1));
+        System.out.println(num28.MoreThanHalfNum_Solution(arr2));
+        System.out.println(num28.MoreThanHalfNum_Solution(arr3));
+    }
+
+    @Test
+    public void testNum29(){
+        Num29 num29 = new Num29();
+        int[] inputs = {4, 5, 1, 6, 2, 7, 3, 8};
+        ArrayList<Integer> res = num29.GetLeastNumbers_Solution(inputs, 4);
+        res.forEach((i) ->
+                System.out.print(i + " "));
+    }
 }

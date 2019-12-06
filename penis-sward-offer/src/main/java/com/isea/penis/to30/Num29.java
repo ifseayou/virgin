@@ -67,12 +67,4 @@ public class Num29 {
         arr[index] = arr[j];
         arr[j] = tmp;
     }
-
-    public static void main(String[] args) {
-        Num29 num29 = new Num29();
-        int[] inputs = {4, 5, 1, 6, 2, 7, 3, 8};
-        ArrayList<Integer> res = num29.GetLeastNumbers_Solution(inputs, 4);
-        res.forEach((i) ->
-                System.out.print(i + " "));
-    }
 }

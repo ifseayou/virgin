@@ -37,14 +37,4 @@ public class Num28 {
             return 0;
         }
     }
-
-    public static void main(String[] args) {
-        Num28 num28 = new Num28();
-        int[] arr1 = {99,2,99,4,6,99,99};
-        int[] arr2 = {1,3,1,4,6,1,1};
-        int[] arr3 = {1,3,5,4,6,1,1};
-        System.out.println(num28.MoreThanHalfNum_Solution(arr1));
-        System.out.println(num28.MoreThanHalfNum_Solution(arr2));
-        System.out.println(num28.MoreThanHalfNum_Solution(arr3));
-    }
 }
