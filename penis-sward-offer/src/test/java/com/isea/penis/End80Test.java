@@ -2,6 +2,7 @@ package com.isea.penis;
 
 import com.isea.penis.end80.Num71;
 import com.isea.penis.end80.Num73;
+import com.isea.penis.end80.Num74;
 import org.junit.Test;
 
 /**
@@ -24,5 +25,12 @@ public class End80Test {
         String[] strArr2 = {"112","aad","ewqw","112"};
         Num73 num73 = new Num73();
         num73.printIntersection(strArr1,strArr2);
+    }
+
+    @Test
+    public void testNum74(){
+        int[] arr = {1,3,4,2,5};
+        Num74 num74 = new Num74();
+        num74.reverseOrderPair(arr);
     }
 }

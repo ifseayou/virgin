@@ -15,7 +15,7 @@ package com.isea.penis.end80;
  * 方法1：遍历每个数，查看每个数之前的数是不是比当前位置小 O（N ^ 2）的时间复杂度，对数器的方法
  * 方法2：使用归并排序的逻辑来解
  *
- * 和小和问题相似的还有逆序对问题
+ * 和小和问题相似的还有逆序对问题(Num74)
  */
 public class Num71 {
     public int smallSum(int[] arr) {

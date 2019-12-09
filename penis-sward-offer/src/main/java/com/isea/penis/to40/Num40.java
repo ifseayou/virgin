@@ -28,14 +28,4 @@ public class Num40 {
         num1[0] = (Integer) res[0];
         num2[0] = (Integer) res[1];
     }
-
-
-    public static void main(String[] args) {
-        int[] arr = {1,2,2,3,4,4,5,6,5,1};
-        Num40 num40 = new Num40();
-        int[] num1 = new int[1];
-        int[] num2 = new int[1];
-        num40.FindNumsAppearOnce(arr,num1,num2);
-        System.out.println(num1[0] + " -- " + num2[0]);
-    }
 }

@@ -31,10 +31,4 @@ public class Num34 {
         }
         return -1;
     }
-
-    public static void main(String[] args) {
-        Num34 num34 = new Num34();
-        System.out.println(num34.FirstNotRepeatingChar("abcdedeca"));
-        System.out.println(num34.FirstNotRepeatingChar("good and night"));
-    }
 }

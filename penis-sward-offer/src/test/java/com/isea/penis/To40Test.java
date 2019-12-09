@@ -1,7 +1,6 @@
 package com.isea.penis;
 
-import com.isea.penis.to40.Num32;
-import com.isea.penis.to40.Num35;
+import com.isea.penis.to40.*;
 import org.junit.Test;
 
 /**
@@ -11,6 +10,38 @@ import org.junit.Test;
  * @target:
  */
 public class To40Test {
+
+    @Test
+    public void testNum31(){
+        Num31 num31 = new Num31();
+        System.out.println(num31.NumberOf1Between1AndN_Solution(13));
+        System.out.println(num31.NumberOf1Between1AndN_Solution(100));
+    }
+
+    @Test
+    public void testNum32(){
+        Num32 num32 = new Num32();
+        int[] numbers = {3,32,321};
+        System.out.println(num32.PrintMinNumber(numbers));
+    }
+
+    @Test
+    public void testNum33(){
+        Num33 num33 = new Num33();
+        System.out.println(num33.GetUglyNumber_Solution(1));
+        System.out.println(num33.GetUglyNumber_Solution(3));
+        System.out.println(num33.GetUglyNumber_Solution(5));
+        System.out.println(num33.GetUglyNumber_Solution(10));
+        System.out.println(num33.GetUglyNumber_Solution(12));
+    }
+
+    @Test
+    public void testNum34(){
+        Num34 num34 = new Num34();
+        System.out.println(num34.FirstNotRepeatingChar("abcdedeca"));
+        System.out.println(num34.FirstNotRepeatingChar("good and night"));
+    }
+
     @Test // 逆序对问题
     public void testNum35(){
         int[] arr = {1,2,3,4,5,6,7,0};
@@ -25,9 +56,22 @@ public class To40Test {
     }
 
     @Test
-    public void testNum32(){
-        Num32 num32 = new Num32();
-        int[] numbers = {3,32,321};
-        System.out.println(num32.PrintMinNumber(numbers));
+    public void testNum37(){
+        Num37 num37 = new Num37();
+        int[] arr = {1,2,3,4,6,6,6,7,8,9,10};
+
+        System.out.println(num37.GetNumberOfK(arr, 1));
+        System.out.println(num37.GetNumberOfK(arr, 6));
+        System.out.println(num37.GetNumberOfK(arr, 10));// 0-10
+    }
+
+    @Test
+    public void testNum40(){
+        int[] arr = {1,2,2,3,4,4,5,6,5,1};
+        Num40 num40 = new Num40();
+        int[] num1 = new int[1];
+        int[] num2 = new int[1];
+        num40.FindNumsAppearOnce(arr,num1,num2);
+        System.out.println(num1[0] + " -- " + num2[0]);
     }
 }

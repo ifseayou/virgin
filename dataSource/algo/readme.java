@@ -22,6 +22,8 @@ count['a'] 表示的结果实际上是 count[97] 该值为0
 for(int i = x ; i < y; i ++) x为负数, 循环次数为  y-x,x截止到y-1
 
 /**
- *
+ * i < arr.lenth 和 i != arr.lenth的效果是一样的
  */
+for(int i = 0; i < arr.lenth; i ++) 等效于 for(int i = 0; i ! arr.lenth;i++)
+
 

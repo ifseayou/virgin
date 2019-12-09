@@ -30,10 +30,4 @@ public class Num31 {
         }
         return res;
     }
-
-    public static void main(String[] args) {
-        Num31 num31 = new Num31();
-        System.out.println(num31.NumberOf1Between1AndN_Solution(13));
-        System.out.println(num31.NumberOf1Between1AndN_Solution(100));
-    }
 }

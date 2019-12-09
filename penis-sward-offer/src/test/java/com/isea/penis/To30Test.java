@@ -38,6 +38,8 @@ public class To30Test {
         Num27 num27 = new Num27();
         ArrayList<String> res = num27.Permutation(abc);
         res.forEach(t-> System.out.print(t + "\t"));
+
+
     }
 
     @Test
@@ -49,6 +51,11 @@ public class To30Test {
         System.out.println(num28.MoreThanHalfNum_Solution(arr1));
         System.out.println(num28.MoreThanHalfNum_Solution(arr2));
         System.out.println(num28.MoreThanHalfNum_Solution(arr3));
+
+
+        System.out.println(num28.MoreThanHalfNum_Solution2(arr1));
+        System.out.println(num28.MoreThanHalfNum_Solution2(arr2));
+        System.out.println(num28.MoreThanHalfNum_Solution2(arr3));
     }
 
     @Test
@@ -58,5 +65,16 @@ public class To30Test {
         ArrayList<Integer> res = num29.GetLeastNumbers_Solution(inputs, 4);
         res.forEach((i) ->
                 System.out.print(i + " "));
+
+        ArrayList<Integer> res2 = num29.solution2(inputs, 4);
+        System.out.println();
+        res2.forEach(t -> System.out.print(t + "\t"));
+    }
+
+    @Test
+    public void testNum30(){
+        int[] arr = {6,-3,-2,7,-15,1,2,2};
+        Num30 num30 = new Num30();
+        System.out.println(num30.FindGreatestSumOfSubArray(arr));
     }
 }

@@ -23,11 +23,6 @@ public class Num37 {
     }
 
     public static void main(String[] args) {
-        Num37 num37 = new Num37();
-        int[] arr = {1,2,3,4,6,6,6,7,8,9,10};
 
-        System.out.println(num37.GetNumberOfK(arr, 1));
-        System.out.println(num37.GetNumberOfK(arr, 6));
-        System.out.println(num37.GetNumberOfK(arr, 10));// 0-10
     }
 }

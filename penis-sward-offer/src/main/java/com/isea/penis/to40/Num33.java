@@ -29,13 +29,4 @@ public class Num33 {
         }
         return res[index - 1];
     }
-
-    public static void main(String[] args) {
-        Num33 num33 = new Num33();
-        System.out.println(num33.GetUglyNumber_Solution(1));
-        System.out.println(num33.GetUglyNumber_Solution(3));
-        System.out.println(num33.GetUglyNumber_Solution(5));
-        System.out.println(num33.GetUglyNumber_Solution(10));
-        System.out.println(num33.GetUglyNumber_Solution(12));
-    }
 }
