@@ -3,6 +3,9 @@ package com.isea.penis;
 import com.isea.penis.order90.*;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static com.isea.penis.utils.OrderChecker.*;
 
 /**
@@ -12,7 +15,7 @@ import static com.isea.penis.utils.OrderChecker.*;
  */
 public class Order100Test {
     @Test
-    public void testBubbleSort(){
+    public void testBubbleSort() {
         BubbleSort bs = new BubbleSort();
         int testTimes = 500000;
         int maxValue = 100;
@@ -37,7 +40,7 @@ public class Order100Test {
     }
 
     @Test
-    public void testSelectionSort(){
+    public void testSelectionSort() {
         SelectionSort ss = new SelectionSort();
         int testTimes = 500000;
         int maxValue = 100;
@@ -62,7 +65,7 @@ public class Order100Test {
     }
 
     @Test
-    public void testInsertSort(){
+    public void testInsertSort() {
         InsertSort is = new InsertSort();
         int testTimes = 500000;
         int maxValue = 100;
@@ -87,7 +90,7 @@ public class Order100Test {
     }
 
     @Test
-    public void testMergeSort(){
+    public void testMergeSort() {
         MergeSort ms = new MergeSort();
         int testTimes = 500000;
         int maxValue = 100;
@@ -112,7 +115,7 @@ public class Order100Test {
     }
 
     @Test
-    public void testQuickSort(){
+    public void testQuickSort() {
         QuickSort qs = new QuickSort();
         int testTimes = 500000;
         int maxValue = 100;
@@ -134,5 +137,49 @@ public class Order100Test {
         printArray(arr);
         qs.quickSort(arr);
         printArray(arr);
+    }
+
+    @Test
+    public void testHeapSort() {
+        HeapSort hs = new HeapSort();
+        int testTimes = 500000;
+        int maxValue = 100;
+        int maxSize = 100;
+        boolean succeed = true;
+
+        for (int i = 0; i < testTimes; i++) {
+            int[] arr1 = generateRandomArray(maxSize, maxValue);
+            int[] arr2 = copyArray(arr1);
+            hs.heapSort(arr1);
+            comparator(arr2);
+            if (!isEqual(arr1, arr2)) {//若两个数组不相等
+                succeed = false;
+                break;
+            }
+        }
+        System.out.println(succeed ? "This is a right algorithm..." : "That is a wrong algorithm...");
+        int[] arr = generateRandomArray(maxSize, maxValue);
+        printArray(arr);
+        hs.heapSort(arr);
+        printArray(arr);
+    }
+
+    @Test
+    public void getDefectNumberId() {
+        int i = 0;
+        StringBuilder sb = new StringBuilder("QUEXIAN-");
+        SimpleDateFormat sf = new SimpleDateFormat("YYYYMMdd");
+        String lastDate = sf.format(new Date());
+
+        System.out.println(lastDate);
+
+        //判断是否是第二天，如果是第一天，继续累加；
+        sf.format(new Date());
+
+        // 如果是第二天，从新开始。
+
+        System.out.println(sb);
+
+        System.out.println(String.format("%04d", i));
     }
 }

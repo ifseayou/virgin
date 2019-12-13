@@ -3,6 +3,7 @@ package com.isea.clitoris.nullpoint;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 /**
  * @author isea_you
@@ -39,5 +40,12 @@ public class NullPointTest {
         for (int i = 0; i < trueNullPointer.size(); i++) {
             System.out.println(i);
         }
+    }
+
+    @Test
+    public void testPattern(){
+        System.out.println(Pattern.matches("^[\\u4e00-\\u9fa5]{0,}$", "中"));
+        System.out.println(Pattern.matches("^[0-9]","7"));
+        System.out.println(Pattern.matches("^[A-Za-z]", "a"));
     }
 }
