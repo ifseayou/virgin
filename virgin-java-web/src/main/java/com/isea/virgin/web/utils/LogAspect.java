@@ -46,7 +46,7 @@ public class LogAspect {
             return result;
         } catch (Throwable e) {
             e.printStackTrace();
-            // 异常通知
+            // 异常通知，暂时不设置
         } finally {
             // 后置
             String functionName = pjp.getSignature().getName();
@@ -55,12 +55,11 @@ public class LogAspect {
             long duration = System.currentTimeMillis() - startTime.get();
             String msg = "耗时：" + duration + "毫秒";
             if (duration > 1000) {
-                log.error("耗时:{}毫秒，方法名:{}，所属类名:{}，参数项{}", msg, functionName, className);
+                log.warn(functionName +":" + className, msg);
             } else {
-                log.info("耗时:{}毫秒，方法名:{}，所属类名:{}，参数项{}", msg, functionName, className);
+                log.info(functionName +":" + className, msg);
             }
         }
         return -1;
     }
-
 }

@@ -2,6 +2,7 @@ package com.isea.virgin.web.company.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
@@ -14,6 +15,7 @@ import java.util.Date;
  * @target:
  */
 @Data
+@Accessors(chain = true)
 // 需要有get/set方法，swagger才能进行对象的设置
 public class EmployeeDTO {
 
