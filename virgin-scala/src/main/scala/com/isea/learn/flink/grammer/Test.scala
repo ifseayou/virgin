@@ -6,5 +6,7 @@ package com.isea.learn.flink.grammer
   * @target:
   */
 object Test {
+  def main(args: Array[String]): Unit = {
+  }
 
 }

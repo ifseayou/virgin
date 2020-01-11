@@ -8,6 +8,7 @@ package com.isea.penis.to10
   *      例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
   */
 object NumS2 {
+  // 使用一个匿名函数来解决
   val replace = (str:String)=>{
     str.map( t => if (t == ' ') '%' else t)
   }

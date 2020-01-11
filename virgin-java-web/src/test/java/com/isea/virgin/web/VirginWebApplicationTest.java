@@ -1,7 +1,12 @@
 package com.isea.virgin.web;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.isea.virgin.web.company.dto.EmployeeDTO;
+import com.isea.virgin.web.company.entity.Employee;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -38,6 +44,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // @RunWith是一个JUnit4的注解，表明测试运行器,表明获取spring上下文支持；如果使用JUnit5可以不用添加此注解，因为@SpringBootTest中集成了@RunWith
 @SpringBootTest
 // 加载Web ApplicationContext并提供模拟Web环境，其的搜索算法从包含测试包开始工作，直到找到用@SpringBootApplicationor 或者@SpringBootConfiguration注释的类
+@Slf4j
 public class VirginWebApplicationTest {
 
     @Test

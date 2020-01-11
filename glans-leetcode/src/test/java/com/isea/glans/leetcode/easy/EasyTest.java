@@ -35,4 +35,7 @@ public class EasyTest {
         }
     }
 
+    @Test
+    public void testNutritionFacts(){
+    }
 }

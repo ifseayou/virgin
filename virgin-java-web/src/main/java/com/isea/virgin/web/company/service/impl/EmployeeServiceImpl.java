@@ -10,12 +10,14 @@ import com.isea.virgin.web.company.entity.Employee;
 import com.isea.virgin.web.company.mapper.EmployeeMapper;
 import com.isea.virgin.web.company.service.EmployeeService;
 import com.isea.virgin.web.company.vo.EmployeeVO;
+import com.isea.virgin.web.company.vo.PageInfoVO;
 import com.isea.virgin.web.utils.ListUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +31,9 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
 
     @Autowired
     EmployeeMapper employeeMapper;
+
+    @Autowired
+    EmployeeServiceImpl employeeService;
 
     @Override
     public boolean insertTbEmployee(EmployeeDTO employeeDTO) {
@@ -49,18 +54,42 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     }
 
     @Override
-    public PageInfo<EmployeeVO> getEmployeePage(EmployeePageDTO employeePageDTO) {
+    public PageInfoVO<EmployeeVO> getEmployeePage(EmployeePageDTO employeePageDTO) {
+
+        // 传入第几页，当前页的行数大小
         PageHelper.startPage(employeePageDTO.getPageNum(), employeePageDTO.getPageSize());
-        QueryWrapper<Employee> queryWrapper = new QueryWrapper();
+
+        QueryWrapper<Employee> query = new QueryWrapper();
         if (StringUtils.hasText(employeePageDTO.getEmpNo())) {
-            queryWrapper.eq("emp_no", employeePageDTO.getEmpNo());
+            query.eq("emp_no", employeePageDTO.getEmpNo());
         }
-        List<Employee> employees = employeeMapper.selectList(queryWrapper);
+        // 将满足query条件的都选择出来
+        List<Employee> employees = employeeMapper.selectList(query);
+
+        // 将employees 进行分页
         PageInfo<Employee> pageInfo = new PageInfo<>(employees);
+
+        // 将employee 数据变为 employeeVO数据
         List<EmployeeVO> employeeVOs = ListUtils.entityListToModelList(employees, EmployeeVO.class);
-        PageInfo<EmployeeVO> pageInfoVO = new PageInfo<>();
+        PageInfoVO<EmployeeVO> pageInfoVO = new PageInfoVO<>();
+        // 将原有的分页改装成间洁的分页模式
         BeanUtils.copyProperties(pageInfo,pageInfoVO);
+        // 设置一页中值
         pageInfoVO.setList(employeeVOs);
         return pageInfoVO;
+    }
+
+    @Override
+    public boolean insertTbEmployeeBatch(List<EmployeeDTO> employeeDTOS) {
+
+        ArrayList<Employee> employeeList = new ArrayList<>();
+        for (EmployeeDTO employeeDTO : employeeDTOS) {
+            Employee employee = new Employee();
+            BeanUtils.copyProperties(employeeDTO,employee);
+            employee.setDeleted(false);
+            employeeList.add(employee);
+        }
+
+        return employeeService.saveBatch(employeeList);
     }
 }

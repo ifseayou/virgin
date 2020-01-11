@@ -6,12 +6,13 @@
 
     <groupId>com.isea.learn</groupId>
     <artifactId>virgin</artifactId>
+    <!--定义打包方式为pom，父级工程、聚合的打包方式，方便做版本控制，所有parent为当前pom的模块，都将继承当前版本，也即1.0-SNAPSHOT-->
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>virgin-avro</module>
         <module>virgin-scala</module>
-        <module>virgin-apollo</module>
         <module>virgin-kafka</module>
         <module>virgin-websocket</module>
         <module>virgin-spark</module>
@@ -27,8 +28,7 @@
         <module>clitoris-java</module>
         <module>clitoris-logger</module>
         <module>virgin-juint</module>
-        <module>virgin-boot-web</module>
-        <module>virgin-vue</module>
+        <module>virgin-design-model</module>
     </modules>
 
     <properties>
@@ -36,14 +36,42 @@
         <log4j.verson>2.8.2</log4j.verson>
         <slf4j.version>1.7.5</slf4j.version>
         <logback.version>1.1.7</logback.version>
+        <mysql.connector.version>5.0.4</mysql.connector.version>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.18.4</lombok.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
 
 </project>

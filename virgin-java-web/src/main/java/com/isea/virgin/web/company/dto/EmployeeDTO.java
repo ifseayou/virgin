@@ -1,5 +1,6 @@
 package com.isea.virgin.web.company.dto;
 
+import com.isea.virgin.web.annotation.Mobile;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -41,6 +42,10 @@ public class EmployeeDTO {
     @ApiModelProperty(value = "性别，1: 男 0: 女")
     @NotBlank(message = "Gender can not null or empty")
     private String gender;
+
+    @ApiModelProperty(value = "手机号")
+    @Mobile(message = "invalid mobile number")
+    private String mobile;
 
     @ApiModelProperty(value = "出生日期 如1997-09-07 'YYYY-mm-dd'")
     @Past(message = "BirthDate must be a past time") //该注解仅仅为util.Date类型的日期类型生效

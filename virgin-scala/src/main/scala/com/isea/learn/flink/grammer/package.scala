@@ -13,5 +13,4 @@ package object Grammer {
   def main(args: Array[String]): Unit = {
     abs(-3)
   }
-
 }

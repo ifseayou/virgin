@@ -1,13 +1,12 @@
 package com.isea.virgin.web.company.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.isea.virgin.web.company.dto.EmployeeDTO;
 import com.isea.virgin.web.company.dto.EmployeePageDTO;
 import com.isea.virgin.web.company.entity.Employee;
 import com.isea.virgin.web.company.service.EmployeeService;
 import com.isea.virgin.web.company.vo.EmployeeVO;
+import com.isea.virgin.web.company.vo.PageInfoVO;
 import com.isea.virgin.web.utils.Result;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -15,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author ifseayou@gmail.com
@@ -54,8 +54,15 @@ public class EmployeeController {
     @ApiOperation(value = "获取员工列表",notes = "查询所有员工")
     @ApiParam(name = "传入的值",value = "Json",required = true)
     @PostMapping("/employee/list")
-    public Result<PageInfo<EmployeeVO>> getEmployeePage(@RequestBody EmployeePageDTO employeePageDTO){
+    public Result<PageInfoVO<EmployeeVO>> getEmployeePage(@RequestBody EmployeePageDTO employeePageDTO){
         return Result.success(employeeService.getEmployeePage(employeePageDTO));
+    }
+
+    @ApiOperation(value = "批量添加员工",notes = "批量添加员工")
+    @ApiParam(name = "传入的值",value = "JSON",required = true)
+    @PostMapping("/employee/batch")
+    public Result<Boolean> insertTbEmployeeBatch(@RequestBody List<EmployeeDTO> employeeDTOS){
+        return Result.success(employeeService.insertTbEmployeeBatch(employeeDTOS));
     }
 
 }

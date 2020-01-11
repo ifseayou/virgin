@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.util.Date;
@@ -19,6 +20,7 @@ import java.util.Date;
 
 @Data
 @Accessors(chain = true)
+@ToString
 public class Employee extends Model<Employee> {
 
     private static final long serialVersionUID = 1L;
@@ -46,6 +48,12 @@ public class Employee extends Model<Employee> {
      */
     @TableField("gender")
     private String gender;
+
+    /**
+     * 员工电话
+     */
+    @TableField("mobile")
+    private String mobile;
 
     /***
      * 出生日期

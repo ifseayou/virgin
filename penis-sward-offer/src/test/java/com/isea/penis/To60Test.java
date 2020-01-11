@@ -16,4 +16,9 @@ public class To60Test {
         String str = "12e";
         num54.isNumeric(str.toCharArray());
     }
+
+    @Test
+    public void tes(){
+
+    }
 }

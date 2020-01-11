@@ -1,17 +1,22 @@
 package com.isea.virgin.web.company.service;
 
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.isea.virgin.web.company.dto.EmployeeDTO;
 import com.isea.virgin.web.company.dto.EmployeePageDTO;
 import com.isea.virgin.web.company.entity.Employee;
 import com.isea.virgin.web.company.vo.EmployeeVO;
+import com.isea.virgin.web.company.vo.PageInfoVO;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author ifseayou@gmail.com
  * @date 2020/1/3 14:46
  * @target:
  */
-public interface EmployeeService {
+@Service
+public interface EmployeeService extends IService<Employee> {
     /**
      * 保存
      * @param employeeDTO
@@ -41,5 +46,12 @@ public interface EmployeeService {
      * @param employeePageDTO
      * @return
      */
-    PageInfo<EmployeeVO> getEmployeePage(EmployeePageDTO employeePageDTO);
+    PageInfoVO<EmployeeVO> getEmployeePage(EmployeePageDTO employeePageDTO);
+
+    /**
+     * 批量插入employee
+     * @param employeeDTOS
+     * @return
+     */
+    boolean insertTbEmployeeBatch(List<EmployeeDTO> employeeDTOS);
 }
