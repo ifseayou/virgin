@@ -29,7 +29,8 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @ApiOperation(value = "添加员工",notes = "添加员工")
+    @ApiOperation(value = "添加员工",httpMethod = "GET",response = String.class,
+            notes = "添加员工")
     @ApiParam(name = "传入的值",value = "传入Json",required = true)
     @PostMapping("/employee/add")
     public Result<Boolean> add(@Valid @RequestBody EmployeeDTO employeeDTO){
