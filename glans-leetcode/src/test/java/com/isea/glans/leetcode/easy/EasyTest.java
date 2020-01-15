@@ -1,5 +1,6 @@
 package com.isea.glans.leetcode.easy;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -33,6 +34,28 @@ public class EasyTest {
             System.out.print(i  +  "-" +palindromeNumber9.isPalindrome(i) + "\t");
             if(i % 10 == 0) System.out.println();
         }
+    }
+
+    @Test
+    public void testRomanToInt13(){
+        RomanToInt13 romanToInt13 = new RomanToInt13();
+        Assert.assertEquals(3,romanToInt13.romanToInt("III"));
+        Assert.assertEquals(romanToInt13.romanToInt("IV"),4);
+        Assert.assertEquals(romanToInt13.romanToInt("IX"),9);
+        Assert.assertEquals(romanToInt13.romanToInt("LVIII"),58);
+        Assert.assertEquals(romanToInt13.romanToInt("MCMXCIV"),1994);
+    }
+
+
+    @Test
+    public void testLCP14(){
+        LongestCommonPrefix14 longestCommonPrefix14 = new LongestCommonPrefix14();
+        String[] strs1 = {"flower","flow","flight"};
+        String[] strs2 = {"dog","racecar","car"};
+        String[] strs3 = {"cd","car","car"};
+        System.out.println(longestCommonPrefix14.longestCommonPrefix(strs1));
+        System.out.println(longestCommonPrefix14.longestCommonPrefix(strs2));
+        System.out.println(longestCommonPrefix14.longestCommonPrefix(strs3));
     }
 
     @Test
