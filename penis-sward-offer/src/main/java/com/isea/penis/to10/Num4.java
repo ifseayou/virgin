@@ -37,6 +37,7 @@ public class Num4 {
         TreeNode root = new TreeNode(pre[preL]);
         for (int i = 0; i < in.length; i++) {
             if (in[i] == pre[preL]){
+                //  x - (preL + 1) + 1 = i -1 - inL + 1
                 root.left = reConstructBinaryTree(pre,preL + 1,preL + i - inL,in,inL,i - 1);
                 root.right = reConstructBinaryTree(pre,preL + i - inL + 1,preR,in,i + 1,inR);
                 break;

@@ -1,8 +1,5 @@
 package com.isea.penis.to10
 
-import scala.collection.mutable
-import scala.collection.mutable.ArrayBuffer
-
 /**
   * @author ifseayou@gmail.com
   * @date 2020/1/9 16:46
@@ -13,5 +10,3 @@ object NumS3 {
     list.reverse
   }
 }
-
-
