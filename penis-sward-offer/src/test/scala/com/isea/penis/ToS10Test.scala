@@ -45,10 +45,10 @@ class ToS10Test {
 
   @Test
   def testNumS5(): Unit ={
-    NumS5.push(1);
-    NumS5.push(2);
-    NumS5.push(3);
-    NumS5.push(4);
+    NumS5.push(1)
+    NumS5.push(2)
+    NumS5.push(3)
+    NumS5.push(4)
     Assert.assertEquals(1,NumS5.pop)
     Assert.assertEquals(2,NumS5.pop)
     Assert.assertEquals(3,NumS5.pop)
@@ -70,6 +70,37 @@ class ToS10Test {
     Assert.assertEquals(3,NumS7.fibonacci(4))
     Assert.assertEquals(5,NumS7.fibonacci(5))
   }
+
+  @Test
+  def testNumS8(): Unit ={
+    Assert.assertEquals(1,NumS8.JumpFloor(1))
+    Assert.assertEquals(2,NumS8.JumpFloor(2))
+    Assert.assertEquals(3,NumS8.JumpFloor(3))
+    Assert.assertEquals(5,NumS8.JumpFloor(4))
+    Assert.assertEquals(8,NumS8.JumpFloor(5))
+  }
+
+  @Test
+  def testNumS9(): Unit ={
+    Assert.assertEquals(1,NumS9.JumpFloorII(1))
+    Assert.assertEquals(2,NumS9.JumpFloorII(2))
+    Assert.assertEquals(4,NumS9.JumpFloorII(3))
+    Assert.assertEquals(8,NumS9.JumpFloorII(4))
+    Assert.assertEquals(16,NumS9.JumpFloorII(5))
+  }
+
+    @Test
+  def testNumS10(): Unit ={
+      println(NumS10.RectCover(1))
+      println(NumS10.RectCover(2))
+      println(NumS10.RectCover(3))
+      println(NumS10.RectCover(4))
+      println(NumS10.RectCover(5))
+  }
+
+
+
+
 
   @Test
   def test():Unit = {
