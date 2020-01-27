@@ -2,6 +2,7 @@ package com.isea.penis
 
 import com.isea.penis.to10.NumS4.TreeNode
 import com.isea.penis.to10._
+import com.isea.penis.to20.NumS11
 import org.junit._
 
 /**
@@ -98,9 +99,13 @@ class ToS10Test {
       println(NumS10.RectCover(5))
   }
 
-
-
-
+  @Test
+  def testNumS11(): Unit ={
+    Assert.assertEquals(1,NumS11.NumberOf1(2))
+    Assert.assertEquals(2,NumS11.NumberOf1(3))
+    Assert.assertEquals(1,NumS11.NumberOf1(4))
+    Assert.assertEquals(2,NumS11.NumberOf1(5))
+  }
 
   @Test
   def test():Unit = {

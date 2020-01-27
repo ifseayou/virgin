@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author isea_you
  * @date 2019/10/24
  * @time 19:24
- * @target: 输入一个链表，输出该链表中倒数第k个结点。
+     * @target: 输入一个链表，输出该链表中倒数第k个结点。
  */
 public class Num14 {
     private static class ListNode{
