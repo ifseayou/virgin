@@ -14,7 +14,11 @@ object WordCount {
     val conf: SparkConf = new SparkConf().setAppName("WordCount demo").setMaster("local[4]")
     val sc = new SparkContext(conf)
     val dataSource: RDD[String] = sc.textFile("dataSource/spark/wordcount")
-    val res: RDD[(String, Int)] = dataSource.flatMap(_.split(" ")).map((_,1)).reduceByKey(_ + _)
-    res.foreach(println)
+    val res: RDD[(String, Int)] = dataSource
+      .flatMap(_.split("").
+        filter(t=>{"abcdefghijklmnopqrstuvwxyz".contains(t)}))
+      .map((_,1)).reduceByKey(_ + _)
+    res.foreach(println(_))
   }
+
 }

@@ -1,6 +1,7 @@
 package com.isea.penis;
 
 import com.isea.penis.order90.*;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
@@ -165,21 +166,9 @@ public class Order100Test {
     }
 
     @Test
-    public void getDefectNumberId() {
-        int i = 0;
-        StringBuilder sb = new StringBuilder("QUEXIAN-");
-        SimpleDateFormat sf = new SimpleDateFormat("YYYYMMdd");
-        String lastDate = sf.format(new Date());
-
-        System.out.println(lastDate);
-
-        //判断是否是第二天，如果是第一天，继续累加；
-        sf.format(new Date());
-
-        // 如果是第二天，从新开始。
-
-        System.out.println(sb);
-
-        System.out.println(String.format("%04d", i));
+    public void testMaxGap() {
+        int[] nums = {1,2,10,9,29,99,22,93,45,34,67,88};
+        MaxGap maxGap = new MaxGap();
+        Assert.assertEquals(22,maxGap.maxGap(nums));
     }
 }

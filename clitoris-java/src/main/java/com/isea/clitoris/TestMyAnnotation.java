@@ -6,7 +6,9 @@ package com.isea.clitoris;
  * @time 9:21
  * @target:
  */
-public class Test {
+
+
+public class TestMyAnnotation {
     public static void main(String[] args) {
         Boolean sign = Boolean.valueOf(false);
         System.out.println(sign);

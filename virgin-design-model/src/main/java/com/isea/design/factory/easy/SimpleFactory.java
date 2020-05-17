@@ -7,7 +7,8 @@ import com.isea.design.factory.easy.pizza.Pizza;
 /**
  * @author ifseayou@gmail.com
  * @date 2020/1/22 9:31
- * @target:
+ * @target:  简单工厂模式属于创建型模式，简单工厂模式由一个工厂对象决定创建出哪一种产品类的实例。
+ * 简单工厂模式是工厂模式家族中最简单最实用的模式
  */
 
 public class SimpleFactory {

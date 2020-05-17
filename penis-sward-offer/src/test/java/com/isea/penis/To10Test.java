@@ -12,6 +12,11 @@ import org.junit.Test;
 public class To10Test {
     @Test
     public void testNum1() {
+        /**
+         * 1 2 3
+         * 4 5 6
+         * 7 8 9
+         */
         int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         Num1 num1 = new Num1();
         System.out.println(num1.find(0, arr));
@@ -80,4 +85,28 @@ public class To10Test {
         System.out.println(num10.RectCover(2));
         System.out.println(num10.RectCover(3));
     }
+
+
+    @Test
+    public void test(){
+        int[] oneD = {1,2,3,4,5,6,7,8,9};
+        for (int i = 0; i < oneD.length; i++) {
+            System.out.print(oneD[i]+ "\t");
+        }
+
+        int[][] twoD = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
+
+        System.out.println();
+        for (int i = 0; i < twoD.length; i++) {
+            for (int j = 0 ; j < twoD[i].length; j ++){
+                System.out.print(twoD[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
 }

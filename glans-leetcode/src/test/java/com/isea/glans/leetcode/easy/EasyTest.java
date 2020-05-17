@@ -60,5 +60,21 @@ public class EasyTest {
 
     @Test
     public void testNutritionFacts(){
+        double a = Math.pow(1.1, 10) * 100;
+        double b = Math.pow(1.07,10) * 100;
+        System.out.println(a + "-" + b + "=" + (a -b));
+
+
+        double c = Math.pow(1.1,20) * 100;
+        double d = Math.pow(1.07,20) * 100;
+        System.out.println(c + "-" + d + "=" + (c - d));
+    }
+
+    @Test
+    public void test(){
+        String substring = "QUEXIAN-202001190001".substring(16);
+        System.out.println(substring);
+        System.out.println(Integer.valueOf(substring));
+        System.out.println(Integer.valueOf("QUEXIAN-202001191001".substring(16)));
     }
 }

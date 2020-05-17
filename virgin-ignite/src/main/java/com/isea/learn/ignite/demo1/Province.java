@@ -1,0 +1,32 @@
+package com.isea.learn.ignite.demo1;
+
+/**
+ * @author ifseayou@gmail.com
+ * @date 2020/2/12 9:40
+ * @target:
+ */
+public class Province {
+    private int id;
+    private String name;
+
+    public Province(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
