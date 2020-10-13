@@ -37,7 +37,7 @@
         <slf4j.version>1.7.5</slf4j.version>
         <logback.version>1.1.7</logback.version>
         <mysql.connector.version>5.0.4</mysql.connector.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <lombok.version>1.18.4</lombok.version>
     </properties>
 
