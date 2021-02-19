@@ -13,10 +13,12 @@ public class HeapSort {
             return;
         }
 
+        // 建立大根堆
         for (int i = 0;i < arr.length ; i ++){
             heapInsert(arr,i);
         }
 
+        // 进行堆排序
         int heapSize = arr.length; // 堆的大小
         Swap.swap2(arr,0,--heapSize); // 对调堆顶的元素和数组的最后一个元素
         while(heapSize > 0){

@@ -4,6 +4,7 @@ package com.isea.penis.order90;
  * @author ifseayou@gmail.com
  * @date 2020/5/17 9:57
  * @target: 给定一个数组，求如果排序之后，相邻两数的最大差值，要求时 间复杂度O(N)，且要求不能用非基于比较的排序。
+ * 如：1,4，9，2,5  排序之后，1,2,4，5,9 最大的差值为4
  * 基于桶排序，找到相邻的两个数的最大差值
  * 算法思想：
  *  1，设计 数组长度+1 个桶，则一定存在一个空桶，排除了最大差值来自同一个桶的可能性
@@ -47,6 +48,7 @@ public class MaxGap {
 
     }
 
+    // 定位当前的数在哪一号桶里面
     private static int bucket(int num, int len, int min, int max) {
         return (int) ((num - min) *  len / (max - min));
     }

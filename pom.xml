@@ -29,6 +29,7 @@
         <module>clitoris-logger</module>
         <module>virgin-juint</module>
         <module>virgin-design-model</module>
+        <module>code-practice</module>
     </modules>
 
     <properties>
