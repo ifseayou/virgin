@@ -3,7 +3,7 @@ package com.isea.clitoris.linkedlist;
 /**
  * @author ifseayou@gmail.com
  * @date 2021/2/19 20:33
- * @target: 将链表按照small-equal-bigger连接起来
+ * @target: 将链表按照small-equal-bigger连接起来 额外空间复杂度为O(1)
  */
 public class SmallerEqualBigger {
     public static class Node{
