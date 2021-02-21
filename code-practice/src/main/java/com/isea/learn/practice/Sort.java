@@ -566,11 +566,44 @@ public class Sort {
         }
     }
 
+    private static class TreeNode {
+        private Integer val;
+        private TreeNode left;
+        private TreeNode right;
+        private TreeNode parent;
+
+        public TreeNode(int data) {
+            this.val = data;
+        }
+    }
+
+    public static TreeNode getSucessorNode(TreeNode node){
+        if(node == null) return null;
+        if (node.right!= null){
+            return getMostLeft(node.right);
+        }else {
+            TreeNode parent = node.parent;
+            while(parent != null && parent.left != node){
+                node = parent;
+                parent = node.parent;
+            }
+            System.out.println("forbidden..");
+            return parent;
+        }
+    }
+
+    private static TreeNode getMostLeft(TreeNode node) {
+        if(node == null) return null;
+        while(node.left != null){
+            node = node.left;
+        }
+        return node;
+    }
+
 
     public static void main(String[] args) {
         for (int i = 0; i < 20; i++) {
             System.out.println(new Random().nextInt(4));
         }
     }
-
 }
