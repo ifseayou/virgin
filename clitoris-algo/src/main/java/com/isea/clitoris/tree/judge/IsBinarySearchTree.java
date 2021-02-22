@@ -1,6 +1,7 @@
 package com.isea.clitoris.tree.judge;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * 判断一棵树数是否是二分搜索树
@@ -22,7 +23,7 @@ public class IsBinarySearchTree {
     }
 
     public static void inOrder(TreeNode head) {
-        if (head != null) {
+        if (head == null) {
             return;
         }
         inOrder(head.left);
@@ -30,15 +31,39 @@ public class IsBinarySearchTree {
         inOrder(head.right);
     }
 
-    public static boolean isBinarySearchTree(TreeNode head) {
+    public static boolean isBinarySearchTree1(TreeNode head) {
         inOrder(head);
-        int min = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
         while (!queue.isEmpty()) {
             Integer value = queue.poll();
             if (min > value) {
                 return false;
             }
             min = value;
+        }
+        return true;
+    }
+
+    /**
+     * 判断是否是一颗二叉搜索树，非递归判断
+     * @param head
+     * @return
+     */
+    public static boolean isBinarySearchTree2(TreeNode head) {
+        if (head != null){
+            int min = Integer.MIN_VALUE;
+            Stack<TreeNode> stack = new Stack<>();
+            while(!stack.isEmpty() || head != null){
+                if (head != null){
+                    stack.push(head);
+                    head = head.left;
+                }else {
+                    head = stack.pop();
+                    if(head.data < min) return false;
+                    else min = head.data;
+                    head = head.right;
+                }
+            }
         }
         return true;
     }
@@ -51,6 +76,7 @@ public class IsBinarySearchTree {
         head.left.left = new TreeNode(2);
         head.left.right = new TreeNode(4);
 
-        System.out.println(isBinarySearchTree(head)); // true
+        System.out.println(isBinarySearchTree1(head)); // true
+        System.out.println(isBinarySearchTree2(head)); // true
     }
 }
