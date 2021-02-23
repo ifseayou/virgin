@@ -22,10 +22,7 @@ public class IsCompleteBinaryTree {
     }
 
     public static boolean isCompleteBinaryTree(TreeNode head) {
-        if (head == null) {
-            return true;
-        }
-
+        if (head == null)  return true;
         LinkedList<TreeNode> queue = new LinkedList<>();
         TreeNode left = null;
         TreeNode right = null;
@@ -37,21 +34,13 @@ public class IsCompleteBinaryTree {
             left = head.left;
             right = head.right;
 
-            if ((leaf && (left != null || right != null)) || (left == null && right != null)) {  // 有右没左；开启叶节点之后，后面不是叶节点
+            if ((leaf && (left != null || right != null)) || (left == null && right != null))
+                // 有右没左；开启叶节点之后，后面不是叶节点
                 return false;
-            }
 
-            if (left != null) {
-                queue.offer(left);
-            }
-
-            if (right != null) {
-                queue.offer(right);
-            }
-
-            if (left == null || right == null) {
-                leaf = true;
-            }
+            if (left != null) queue.offer(left);
+            if (right != null) queue.offer(right);
+            if (left == null || right == null) leaf = true;
         }
         return true;
     }

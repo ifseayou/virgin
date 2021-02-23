@@ -20,9 +20,7 @@ public class NumCBT {
     }
 
     public static int getCompleteBinaryTreeNum(TreeNode head) {
-        if (head == null) {
-            return 0;
-        }
+        if (head == null) return 0;
         return bs(head, 1, mostLeftLevel(head, 1));
     }
 

@@ -599,6 +599,57 @@ public class Sort {
         }
         return node;
     }
+    public static boolean isCompleteBinaryTree(TreeNode head){
+        if(head == null) return true;
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        TreeNode left = null;
+        TreeNode right = null;
+        boolean leaf = false;
+        queue.offer(head);
+        while(!queue.isEmpty()){
+            head = queue.poll();
+            left = head.left;
+            right = head.right;
+            if ((leaf && (left != null && right != null))|| (left == null && right != null))
+                return false;
+            if (left != null) queue.offer(left);
+            if (right != null) queue.offer(right);
+            else leaf = true;
+        }
+        return true;
+    }
+
+    /**
+     * 一颗完全二叉树的个数，< O(N)
+     * @return
+     */
+    public static int nodeNum(TreeNode node){
+        if(node == null)  return 0;
+        return bs(node,1,getLeftLevel(node,1));
+    }
+
+    /**
+     * 以node为根节点，层树在level 的节点的个数
+     * @param node
+     * @param level
+     * @param h
+     * @return
+     */
+    private static int bs(TreeNode node, int level, int h) {
+        if(level == h) return 1;
+        if (getLeftLevel(node.right,level +1) == h)
+            return 1 << (h-level) + bs(node.right,level + 1,h);
+        else
+            return 1 << (h -level -1) + bs(node.left,level + 1,h);
+    }
+
+    private static int getLeftLevel(TreeNode node, int level) {
+        while(node != null){
+            level ++;
+            node = node.left;
+        }
+        return level -1;
+    }
 
 
     public static void main(String[] args) {
